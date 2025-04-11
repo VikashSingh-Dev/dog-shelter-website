@@ -2,8 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
 
@@ -104,33 +102,6 @@
             color: #666;
             margin-top: 10px;
         }
-
-        
-    main {
-      display: grid;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 10px;
-      padding: 20px;
-      margin: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      width: 250px;
-      text-align: center;
-      flex-grow: 1;
-    }
-
-    section {
-      display: flex;
-      flex-direction: row;
-      flex: 1;
-      flex-grow: 8;
-      flex-wrap: wrap;
-    }
     </style>
 </head>
 <body>
@@ -142,7 +113,7 @@
             </a>
         </div>
         <ul class="nav-links">
-            <li><a href="#">Home</a></li>
+            <li><a href="/index.html">Home</a></li>
             <li><a href="/Adopt a Dog.html">Adopt a Dog</a></li>
             <li><a href="/About-us.html">About us</a></li>
             <li><a href="#">Contact</a></li>
@@ -160,49 +131,7 @@
         <h1>Welcome to Pawsome Rescues Dog Adoption Center</h1>
        
     </div>
-    <main>
-        <section id="result"></section>
-    </main>
-    <script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script>
-  function displayBreeds(data) {
-    let result = document.querySelector('#result');
-    let html = '';
 
-    for (let dog of data) {
-
-      let imageUrl = '';
-      if (dog.image && dog.image.url) {
-        imageUrl = dog.image.url;
-      } else if (dog.reference_image_id) {
-        imageUrl = `https://cdn2.thedogapi.com/images/${dog.reference_image_id}.jpg`;
-      }
-
-      if (imageUrl) {
-        html += `
-          <article class="card">
-              <img src="${imageUrl}" alt="${dog.name}" width="220" height="180" />
-            <p><strong>Name:</strong> ${dog.name}</p>
-            <p><strong>Breed Group:</strong> ${dog.breed_group}</p>
-            <p><strong>Temperament:</strong> ${dog.temperament}</p>
-            <p><strong>Life Span:</strong> ${dog.life_span}</p>
-          
-          </article>
-        `;
-      }
-    }
-
-    result.innerHTML = html;
-  }
-
-  async function getBreeds() {
-    let response = await fetch('https://api.thedogapi.com/v1/breeds');
-    let data = await response.json();
-    displayBreeds(data);
-  }
-
-  getBreeds();
-</script>
+ 
 </body>
 </html>

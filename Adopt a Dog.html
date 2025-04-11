@@ -68,6 +68,31 @@
         .log button:hover {
             background-color: #e6b800;
         }
+        main {
+      display: grid;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 250px;
+      text-align: center;
+      flex-grow: 1;
+    }
+    
+    section {
+      display: flex;
+      flex-direction: row;
+      flex: 1;
+      flex-grow: 8;
+      flex-wrap: wrap;
+    }
         </style>
 </head>
 <body>
@@ -92,7 +117,48 @@
     <div>
         <img src="Banner2.png" alt="Adopt a Dog Banner" style="width: 100%; height: 600px;">
     </div>
+    <main>
+        <section id="result"></section>
+    </main>
 
+<script>
+    function displayBreeds(data) {
+    let result = document.querySelector('#result');
+    let html = '';
 
+    for (let dog of data) {
+
+      let imageUrl = '';
+      if (dog.image && dog.image.url) {
+        imageUrl = dog.image.url;
+      } else if (dog.reference_image_id) {
+        imageUrl = `https://cdn2.thedogapi.com/images/${dog.reference_image_id}.jpg`;
+      }
+
+      if (imageUrl) {
+        html += `
+          <article class="card">
+              <img src="${imageUrl}" alt="${dog.name}" width="220" height="180" />
+            <p><strong>Name:</strong> ${dog.name}</p>
+            <p><strong>Breed Group:</strong> ${dog.breed_group}</p>
+            <p><strong>Temperament:</strong> ${dog.temperament}</p>
+            <p><strong>Life Span:</strong> ${dog.life_span}</p>
+          
+          </article>
+        `;
+      }
+    }
+
+    result.innerHTML = html;
+  }
+
+  async function getBreeds() {
+    let response = await fetch('https://api.thedogapi.com/v1/breeds');
+    let data = await response.json();
+    displayBreeds(data);
+  }
+
+  getBreeds();
+</script>
 </body>
 </html>
