@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+
+    <title>Dog Adoption</title>
+    <link rel="icon" href="Icon.png" type="image/png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+           
+           background-color: transparent;
+          
+        }
+        .logo img {
+            max-width: 0.5 px;
+            height: 0.5 px;
+            transition: opacity 0.3s ease;
+        }
+
+        nav {
+            transition: opacity 0.3s ease;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: transparent;
+            
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+
+        .nav-links a:hover {
+            color: #ffcc00;
+        }
+
+        .log {
+            display: flex;
+            gap: 10px;
+        }
+
+        .log button {
+            padding: 8px 15px;
+            border: none;
+            background-color: #ffcc00;
+            color: black;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .log button:hover {
+            background-color: #e6b800;
+        }
+
+        .banner {
+            width: 60%;
+            height: 300px; 
+            background-image: url('banner-image.jpg'); /* Replace with your banner image file path */
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: white;
+            padding-top: 100px;
+        }
+
+        .homepage {
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            font-size: 40px;
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        
+    main {
+      display: grid;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 250px;
+      text-align: center;
+      flex-grow: 1;
+    }
+
+    section {
+      display: flex;
+      flex-direction: row;
+      flex: 1;
+      flex-grow: 8;
+      flex-wrap: wrap;
+    }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="Dog.png" alt="logo">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="/Adopt a Dog.html">Adopt a Dog</a></li>
+            <li><a href="/About-us.html">About us</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="log">
+            <button>Log In</button>
+            <button>Sign Up</button>
+        </div>
+    </nav>
+    <div>
+        <img src="Banner.png" alt="Adopt a Dog Banner" style="width: 104%; height: 400px;">
+    </div>
+
+    <div class="homepage">
+        <h1>Welcome to Pawsome Rescues Dog Adoption Center</h1>
+       
+    </div>
+    <main>
+        <section id="result"></section>
+    </main>
+    <script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+  function displayBreeds(data) {
+    let result = document.querySelector('#result');
+    let html = '';
+
+    for (let dog of data) {
+
+      let imageUrl = '';
+      if (dog.image && dog.image.url) {
+        imageUrl = dog.image.url;
+      } else if (dog.reference_image_id) {
+        imageUrl = `https://cdn2.thedogapi.com/images/${dog.reference_image_id}.jpg`;
+      }
+
+      if (imageUrl) {
+        html += `
+          <article class="card">
+              <img src="${imageUrl}" alt="${dog.name}" width="220" height="180" />
+            <p><strong>Name:</strong> ${dog.name}</p>
+            <p><strong>Breed Group:</strong> ${dog.breed_group}</p>
+            <p><strong>Temperament:</strong> ${dog.temperament}</p>
+            <p><strong>Life Span:</strong> ${dog.life_span}</p>
+          
+          </article>
+        `;
+      }
+    }
+
+    result.innerHTML = html;
+  }
+
+  async function getBreeds() {
+    let response = await fetch('https://api.thedogapi.com/v1/breeds');
+    let data = await response.json();
+    displayBreeds(data);
+  }
+
+  getBreeds();
+</script>
+</body>
+</html>
