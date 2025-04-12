@@ -102,6 +102,48 @@
             color: #666;
             margin-top: 10px;
         }
+    .counting {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.counting img {
+    width: 1400px;
+    height: 300px; 
+    object-fit: cover;
+}
+
+#counter {
+    position: absolute;
+    top: 35%;
+    left: 49%;
+    font-size: 50px;
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+.text {
+    position: absolute;
+    top: 70%;
+    left: 30%;
+    font-size: 50px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    
+}
+.text2{
+    position: absolute;
+    top: 10%;
+    left: 48%;
+    font-size: 50px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    
+}
     </style>
 </head>
 <body>
@@ -131,7 +173,25 @@
         <h1>Welcome to Pawsome Rescues Dog Adoption Center</h1>
        
     </div>
-
+    <div class="counting">
+        <img src="image.png" alt="Background Image">
+        <div id="counter">0</div>
+        <div class="text2">Over</div>
+        <div class="text">Lives saved through adoption!</div>
+    </div>
+   
+    <script>
+        let count = 0;
+      
+        function updateCount() {
+            if (count<360){
+          count = count + 10;
+          document.getElementById("counter").innerText = count;
+        }
+    }
+        setInterval(updateCount, 350);
+    
+      </script>
  
 </body>
 </html>
