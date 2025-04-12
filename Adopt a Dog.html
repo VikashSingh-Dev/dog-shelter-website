@@ -112,6 +112,7 @@
   border-radius: 4px;
 }
 
+
 .search-bar button {
   padding: 8px 16px;
   border: none;
@@ -121,11 +122,29 @@
   background-color: rgb(48, 132, 228);
   color: white;
 }
-
-button.adopted {
-  background-color: gray;
+section.card2 button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 5px;
+  margin-left: 30px; 
+  background-color: rgb(48, 132, 228);
   color: white;
-  cursor: default;
+}
+
+section.card2 {
+  width: 97vw;
+  margin-left: 10px;
+  padding: 30px;
+  background-color: #fff; 
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+section.card2 button:hover {
+  background-color: rgb(30, 110, 200);
 }
         </style>
 </head>
@@ -155,10 +174,24 @@ button.adopted {
         <input type="search" id="searchKey" placeholder="search breed type...">
         <button onclick="search()">Search</button>
       </div>
+      <section class="card2">
+        <h3>Filter by Breed Group</h3>
+        <button onclick="filterByGroup('Working')">Working</button>
+        <button onclick="filterByGroup('Hound')">Hound</button>
+        <button onclick="filterByGroup('Toy')">Toy</button>
+        <button onclick="filterByGroup('all')">All Groups</button>
+      </section>
+      
+      <section class="card2">
+        <h3>Filter by LifeSpan</h3>
+        <button onclick="filterByLife('medium')">10-13 yrs</button>
+        <button onclick="filterByLife('long')">Above 13 yrs</button>
+        <button onclick="filterByLife('all')">All Lifespans</button>
+      </section>
     <main>
         <section id="result"></section>
     </main>
-
+   
 <script>
     let state = [];
     function displayBreeds(data) {
@@ -178,11 +211,10 @@ button.adopted {
         html += `
           <article class="card">
               <img src="${imageUrl}" alt="${dog.name}" width="220" height="180" />
-             
             <p><strong>Breed Type:</strong> ${dog.name}</p><br>
             <p><strong>Breed Group:</strong> ${dog.breed_group}</p><br>
             <p><strong>Life Span:</strong> ${dog.life_span}</p><br>
-          <button onclick="adopt(this)">Adopt</button>
+    
           </article>
         `;
       }
@@ -196,11 +228,13 @@ button.adopted {
   let data = await response.json();
   state = data; 
   displayBreeds(data);
+  displayBreeds(data);
+  populateBreedGroupFilter(data);
 }
 
 getBreeds();
 function search() {
-            let searchKey = document.querySelector('#searchKey').value; // Get search term
+            let searchKey = document.querySelector('#searchKey').value; 
             let results = [];
 
          
@@ -217,17 +251,34 @@ function search() {
 
             displayBreeds(results); 
         }
-        function adopt(btn) {
-  if (btn.innerText === "Adopt") {
-    btn.innerText = "Adopted!";
-    btn.style.backgroundColor = "#28a745"; 
-    btn.style.color = "white";
-   
-  } else {
-    btn.innerText = "Adopt";
-    btn.style.color = "black";
- 
+        function filterByGroup(group) {
+  let filtered = [];
+
+  for (let rec of state) {
+    if (group === 'all' || rec.breed_group === group) {
+      filtered.push(rec);
+    }
   }
+
+  displayBreeds(filtered);
+}
+
+function filterByLife(range) {
+  let filtered = [];
+
+  for (let rec of state) {
+    let years = rec.life_span; 
+
+    if (
+      range === 'all' ||
+      (range === 'medium' && years >= '10' && years <= '13') || 
+      (range === 'long' && years > '13')      
+    ) {
+      filtered.push(rec);
+    }
+  }
+
+  displayBreeds(filtered);
 }
 </script>
 </body>
