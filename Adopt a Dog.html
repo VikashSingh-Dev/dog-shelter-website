@@ -98,8 +98,26 @@
       flex-grow: 8;
       flex-wrap: wrap;
     }
-    
 
+.search-bar {
+  text-align: center;
+  margin: 20px;
+}
+
+.search-bar input {
+  padding: 8px;
+  width: 220px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-bar button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 8px;
+}
         </style>
 </head>
 <body>
@@ -128,11 +146,16 @@
     <div>
         <img src="Banner2.png" alt="Adopt a Dog Banner" style="width: 100%; height: 600px;">
     </div>
+    <div class="search-bar">
+        <input type="search" id="searchKey" placeholder="search name">
+        <button onclick="search()">Search</button>
+      </div>
     <main>
         <section id="result"></section>
     </main>
 
 <script>
+    let state = [];
     function displayBreeds(data) {
     let result = document.querySelector('#result');
     let html = '';
@@ -164,12 +187,31 @@
   }
 
   async function getBreeds() {
-    let response = await fetch('https://api.thedogapi.com/v1/breeds');
-    let data = await response.json();
-    displayBreeds(data);
-  }
+  let response = await fetch('https://api.thedogapi.com/v1/breeds');
+  let data = await response.json();
+  state = data; 
+  displayBreeds(data);
+}
 
-  getBreeds();
+getBreeds();
+function search() {
+            let searchKey = document.querySelector('#searchKey').value; // Get search term
+            let results = [];
+
+         
+            for (let rec of state) {
+               
+                let searchText = rec.name.toUpperCase();
+    searchKey = searchKey.toUpperCase();
+
+              
+                if (searchText.search(searchKey) !== -1) {
+                    results.push(rec); 
+                }
+            }
+
+            displayBreeds(results); 
+        }
 </script>
 </body>
 </html>
