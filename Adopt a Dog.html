@@ -85,7 +85,10 @@
       text-align: center;
       flex-grow: 1;
     }
-    
+    .card img {
+  border-radius: 3px;
+ margin-bottom: 15px;
+}
     section {
       display: flex;
       flex-direction: row;
@@ -93,6 +96,8 @@
       flex-grow: 8;
       flex-wrap: wrap;
     }
+    
+
         </style>
 </head>
 <body>
@@ -105,7 +110,11 @@
         </div>
         <ul class="nav-links">
             <li><a href="/index.html">Home</a></li>
-            <li><a href="/Adopt a Dog.html">Adopt a Dog</a></li>
+            <li><a href="/Adopt a Dog.html">Adopt a Dog</a>
+            <div class="dropdown">
+                <a href="#">Adoption Details and Information</a>
+              </div>
+            </li>
             <li><a href="/About-us.html">About us</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
@@ -139,9 +148,9 @@
         html += `
           <article class="card">
               <img src="${imageUrl}" alt="${dog.name}" width="220" height="180" />
-            <p><strong>Name:</strong> ${dog.name}</p>
-            <p><strong>Breed Group:</strong> ${dog.breed_group}</p>
-            <p><strong>Temperament:</strong> ${dog.temperament}</p>
+             
+            <p><strong>Breed Type:</strong> ${dog.name}</p><br>
+            <p><strong>Breed Group:</strong> ${dog.breed_group}</p><br>
             <p><strong>Life Span:</strong> ${dog.life_span}</p>
           
           </article>
