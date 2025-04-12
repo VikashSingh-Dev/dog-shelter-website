@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .logo img {
+            max-width: 0.5 px;
+            height: 0.5 px;
+            transition: opacity 0.3s ease;
+        }
+
+        body {
+    font-family: sans-serif;
+    background: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content from the top */
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+nav {
+    width: 100%; 
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+}
+        
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+
+        .nav-links a:hover {
+            color: #ffcc00;
+        }
+
+        .log {
+            display: flex;
+            gap: 10px;
+        }
+
+        .log button {
+            padding: 8px 15px;
+            border: none;
+            background-color: #ffcc00;
+            color: black;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .log button:hover {
+            background-color: #e6b800;
+        }
+
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  width: 60%;
+
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+input, textarea,select {
+  width: 80%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  font: 1em sans-serif;
+}
+.phone-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  width: 500px;
+  justify-content: center;
+  margin-left: 150px;
+}
+label,p {
+  display: block;
+  font-size: 16px;
+  color: #7d7a86;
+  margin-top: 20px;;
+  margin-bottom: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+
+button {
+  background-color:rgb(228, 223, 223);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: rgb(48, 132, 228);
+}
+
+button:hover {
+  background-color:rgb(212, 131, 10) ;
+}
+
+    </style>
+</head>
+<body>
+    
+    <nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="Dog.png" alt="logo">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/Adopt a Dog.html">Adopt a Dog</a></li>
+            <li><a href="/About-us.html">About us</a></li>
+            <li><a href="/Contact-Us.html">Contact</a></li>
+        </ul>
+        <div class="log">
+            <button>Log In</button>
+            <button>Sign Up</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Contact US</h2>
+        <form id="contactForm">
+          <input type="text" id="name" placeholder="Your Name" required />
+          <input type="email" id="email" placeholder="Your Email" required />
+          <p>Enter your phone Number below</p><br>
+          <div class="phone-container">
+           
+            <input type="text" id="areaCode" placeholder="Area Code" maxlength="3" required />
+            <input type="text" id="prefix" placeholder="Prefix" maxlength="3" required />
+            <input type="text" id="lineNumber" placeholder="Line Number" maxlength="4" required />
+          </div>
+          <label for="subject">Select A Topic</label>
+      <select id="subject" required>
+        <option value="" disabled selected>Select a Topic</option>
+        <option value="adoption">Adoption Inquiry</option>
+        <option value="volunteer">Volunteering Services</option>
+        <option value="donation">Donations</option>
+        <option value="general">General Question</option>
+        <option value="general">Fostering</option>
+      </select>
+          <textarea id="message" placeholder="Your Message" required></textarea><br>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    
+</body>
+</html>
