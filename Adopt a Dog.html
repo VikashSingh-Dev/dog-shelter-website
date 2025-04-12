@@ -121,6 +121,12 @@
   background-color: rgb(48, 132, 228);
   color: white;
 }
+
+button.adopted {
+  background-color: gray;
+  color: white;
+  cursor: default;
+}
         </style>
 </head>
 <body>
@@ -175,8 +181,8 @@
              
             <p><strong>Breed Type:</strong> ${dog.name}</p><br>
             <p><strong>Breed Group:</strong> ${dog.breed_group}</p><br>
-            <p><strong>Life Span:</strong> ${dog.life_span}</p>
-          
+            <p><strong>Life Span:</strong> ${dog.life_span}</p><br>
+          <button onclick="adopt(this)">Adopt</button>
           </article>
         `;
       }
@@ -211,6 +217,18 @@ function search() {
 
             displayBreeds(results); 
         }
+        function adopt(btn) {
+  if (btn.innerText === "Adopt") {
+    btn.innerText = "Adopted!";
+    btn.style.backgroundColor = "#28a745"; 
+    btn.style.color = "white";
+   
+  } else {
+    btn.innerText = "Adopt";
+    btn.style.color = "black";
+ 
+  }
+}
 </script>
 </body>
 </html>
