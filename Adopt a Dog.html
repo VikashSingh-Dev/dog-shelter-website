@@ -98,7 +98,47 @@
       flex-grow: 8;
       flex-wrap: wrap;
     }
+    #breedDetails {
+    display: none;
+   position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
 
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 400px;
+    text-align: center;
+}
+
+.modal-content h2 {
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    margin-bottom: 10px;
+}
+
+.close-btn {
+    padding: 8px 16px;
+    border: none;
+    background-color: #ffcc00;
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.close-btn:hover {
+    background-color: #e6b800;
+}
 .search-bar {
   text-align: center;
   margin: 20px;
@@ -192,7 +232,16 @@ section.card2 button:hover {
     <main>
         <section id="result"></section>
     </main>
-   
+    <div id="breedDetails" class="modal">
+      <div class="modal-content">
+          <h2>Breed Details</h2>
+          <p id="breedName"></p>
+          <p id="breedGroup"></p>
+          <p id="lifeSpan"></p>
+          <p id="additionalInfo"></p>
+          <button class="close-btn" onclick="closeModal()">Close</button>
+      </div>
+  </div>
 <script>
     let state = [];
     function displayBreeds(data) {
@@ -215,12 +264,11 @@ section.card2 button:hover {
             <p><strong>Breed Type:</strong> ${dog.name}</p><br>
             <p><strong>Breed Group:</strong> ${dog.breed_group}</p><br>
             <p><strong>Life Span:</strong> ${dog.life_span}</p><br>
-    
+            <button onclick="showDetails(${dog.id})">View Details</button>
           </article>
         `;
       }
     }
-
     result.innerHTML = html;
   }
 
@@ -229,7 +277,7 @@ section.card2 button:hover {
   let data = await response.json();
   state = data; 
   displayBreeds(data);
-  displayBreeds(data);
+  //displayBreeds(data);
   populateBreedGroupFilter(data);
 }
 
@@ -281,6 +329,30 @@ function filterByLife(range) {
 
   displayBreeds(filtered);
 }
+function showDetails(breedId) {
+        let breed = null;
+
+
+        for (let i = 0; i < state.length; i++) {
+            if (state[i].id === breedId) {
+                breed = state[i]; 
+            }
+        }
+
+        if (breed) {
+            document.getElementById('breedName').textContent = 'Breed: ' + breed.name;
+            document.getElementById('breedGroup').textContent = 'Group: ' + (breed.breed_group || 'Unknown');
+            document.getElementById('lifeSpan').textContent = 'Life Span: ' + (breed.life_span || 'Unknown');
+            document.getElementById('additionalInfo').textContent = 'Temperament: ' + (breed.temperament || 'Unknown') + ' | Origin: ' + (breed.origin || 'Unknown');
+            document.getElementById('breedDetails').style.display = 'block';
+        }
+    }
+
+    function closeModal() {
+        document.getElementById('breedDetails').style.display = 'none';
+    }
+
+    getBreeds();
 </script>
 </body>
 </html>
