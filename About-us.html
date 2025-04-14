@@ -152,6 +152,53 @@
             margin-top: 80px;
             transition: transform 1s ease-in-out;
         }
+        .staff-section {
+    padding: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.staff-section h2 {
+    text-align: center;
+    color: #bd7c27;
+    margin-bottom: 40px;
+    font-size: 40px;
+}
+
+.staff-row {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.staff-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.staff-row img {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.staff-info {
+    flex: 1;
+}
+
+.staff-info h3 {
+    color: #208617;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+}
+
+.staff-info p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: justify;
+}
     </style>
 </head>
 <body>
@@ -207,6 +254,41 @@
             </div>
         </div>
       </div>
+      </div>
+      <div class="staff-section">
+        <h2>Meet Our Staff</h2>
+    
+        <div class="staff-row">
+            <img src="market.jpg" alt="Staff Member 1">
+            <div class="staff-info">
+                <h3>F.M. -Marketing</h3>
+                <p>Our marketing director and coordinator encapsulates the essence of marketing and 
+                    advertising our website, projecting the elements, design and UI pattern of the 
+                    dog shelter into a wonderful presentation.
+                </p>
+            </div>
+        </div>
+    
+        <div class="staff-row reverse">
+            <img src="designer.jpg" alt="Staff Member 2">
+            <div class="staff-info">
+                <h3>T.L.- UI Designer</h3>
+                <p>Our UI desginer has created and harmonized the website wireframes and designs of the webpages
+                    crafting a beautiful website encompassing of detailed graphics and features.
+                </p>
+            </div>
+        </div>
+    
+        <div class="staff-row">
+            <img src="lead.jpg" alt="Staff Member 3">
+            <div class="staff-info">
+                <h3>V.S.- Lead and Dev Ops</h3>
+                <p>Our Lead and Dev Ops has uniquely guided and deployed the project as well as providing enormous
+                    feedback and collective collaboration.
+                </p>
+            </div>
+        </div>
+    </div>
     </div>
 
 <script>
