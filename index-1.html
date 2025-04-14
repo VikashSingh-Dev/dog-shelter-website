@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+
+    <title>Dog Adoption</title>
+    <link rel="icon" href="Icon.png" type="image/png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+           
+           background-color: transparent;
+          
+        }
+        .logo img {
+            max-width: 0.5 px;
+            height: 0.5 px;
+            transition: opacity 0.3s ease;
+        }
+
+        nav {
+            transition: opacity 0.3s ease;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: transparent;
+            
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+
+        .nav-links a:hover {
+            color: #ffcc00;
+        }
+
+        .log {
+            display: flex;
+            gap: 10px;
+        }
+
+        .log button {
+            padding: 8px 15px;
+            border: none;
+            background-color: #ffcc00;
+            color: black;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .log button:hover {
+            background-color: #e6b800;
+        }
+
+        .banner {
+            width: 60%;
+            height: 300px; 
+            background-image: url('banner-image.jpg'); /* Replace with your banner image file path */
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: white;
+            padding-top: 100px;
+        }
+
+        .homepage {
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            font-size: 40px;
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            color: #666;
+            margin-top: 10px;
+        }
+    .counting {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.counting img {
+    width: 1400px;
+    height: 300px; 
+    object-fit: cover;
+}
+
+#counter {
+    position: absolute;
+    top: 33%;
+    left: 47%;
+    font-size: 100px;
+    font-weight: bold;
+    color: #d49319;
+}
+
+.text {
+    position: absolute;
+    top: 77%;
+    left: 30%;
+    font-size: 40px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    
+}
+.text2{
+    position: absolute;
+    top: 10%;
+    left: 48%;
+    font-size: 50px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    
+}
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="Dog.png" alt="logo">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/Adopt a Dog.html">Adopt a Dog</a></li>
+            <li><a href="/About-us.html">About us</a></li>
+            <li><a href="/Contact-Us.html">Contact</a></li>
+        </ul>
+        <div class="log">
+            <button>Log In</button>
+            <button>Sign Up</button>
+        </div>
+    </nav>
+    <div>
+        <img src="Banner.png" alt="Adopt a Dog Banner" style="width: 104%; height: 400px;">
+    </div>
+
+    <div class="homepage">
+        <h1>Welcome to Pawsome Rescues Dog Adoption Center</h1>
+       
+    </div>
+    <div class="counting">
+        <img src="image.png" alt="Background Image">
+        <div id="counter">0</div>
+        <div class="text2">Over</div>
+        <div class="text">Lives saved through adoption!</div>
+    </div>
+   
+    <script>
+        let count = 0;
+      
+        function updateCount() {
+            if (count<360){
+          count = count + 5;
+          document.getElementById("counter").innerText = count;
+        }
+    }
+        setInterval(updateCount, 350);
+    
+      </script>
+ 
+</body>
+</html>
