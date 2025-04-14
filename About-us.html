@@ -96,21 +96,41 @@
 
         h1 {
             text-align: center;
-            color: #333;
+            color: #bd7c27;
+        }
+        .message{
+            width: 90em;
+           
         }
 
+        .both{
+            display: flex;
+            gap: 30px;
+            align-items:center;
+            justify-content: space-between;
+        }
         p {
             font-size: 1.1em;
             margin-bottom: 20px;
         }
-        .btn {
+        .btn2 {
             background-color: #007BFF;
             color: white;
             border: none;
             padding: 10px 20px;
             margin-top: 0px;
-            margin-right: 130px;
-            margin-left: 100px;
+            margin-right: 40px;
+            margin-left: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+           display: flex;
+           
+        }
+        .btn1 {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
         }
@@ -122,12 +142,14 @@
         #item-details h3 {
             margin-bottom: 10px;
             transition: transform 1s ease-in-out;
+
         }
+        
         #item-details img {
-            border-radius: 8px;
-            margin: 15px 0;
-            width: 500px;
+            width: 400px;
             height: 300px;
+            margin-left: 90px;
+            margin-top: 80px;
             transition: transform 1s ease-in-out;
         }
     </style>
@@ -157,7 +179,7 @@
 
     <div class="container">
     <div class="about-us">
-            <h1>About Us</h1><br>
+            <h1>About US</h1><br>
             <p>Pawsome Rescues is a Non-Profit dog shelter that was founded in 2015 and is currently
                 located in Arima, Triniad. Our dog shelter strives to nuture and provide uttermost care,
                 love and protection for dogs and puppies of all breed types. Our work and mission sets 
@@ -165,20 +187,31 @@
                 general public on the proper care of adopted and fostered dogs. The Pawsome Rescues Dog 
                 Shelters partners with local volunteers and rescue groups to locate and assist abused or 
                 stray dogs. Our shelter provides top-notch vetinary services, meals, bedding and toys for
-                our dogs. Additionally, our shelter has successfully re-homed and fostered over 360 dogs.</p>
-    
-            <h2>Our Dogs</h2>
+                our dogs. Additionally, our shelter has successfully re-homed and fostered over 360 dogs.</p><br>
+                <div class="both">
+                <div class="message">
+            <h2>Our Dogs</h2><br>
+            <p>Our sheltered dogs are full of fun, exciting personalities that are purrfect for their 
+            future adopters. Our animals get 24/7 care and supervision as well as standard excercise,
+            grooming and attention. There are over 10 types of breeds, differing in weight, height, 
+            origin, life spans and temperaments. Each of our dogs has a special story and journey in 
+            the adoption process. 
+            </p>
+           </div>
             <div id="item-details"></div>
             <div class="btns">
-            <button id="prev-btn" class="btn" onclick="changeCharacter(-1)"><</button>
-            <button id="next-btn" class="btn" onclick="changeCharacter(1)">></button>
+            <button id="prev-btn" class="btn1" onclick="changeCharacter(-1)"><</button>
+            <div id="next">
+            <button id="next-btn" class="btn2" onclick="changeCharacter(1)">></button>
+            </div>
+            </div>
         </div>
       </div>
     </div>
 
 <script>
     
-const apiUrl = 'https://api.thedogapi.com/v1/images/search?limit=40';
+const apiUrl = 'https://dog.ceo/api/breeds/image/random/20';
 let characterData = [];
 let currentIndex = 0;
 
@@ -186,7 +219,7 @@ async function fetchData() {
     try {
         const response = await fetch(apiUrl);
         const data = await response.json();
-        characterData = data;
+        characterData = data.message;
 
         if (characterData.length > 0) {
             displayCharacter(currentIndex);
@@ -202,7 +235,7 @@ function displayCharacter(index) {
     const itemDetails = document.querySelector('#item-details');
     itemDetails.innerHTML = `
         
-        <img src="${dog.url}">
+        <img src="${dog}">
     `;
 }
 
@@ -219,7 +252,7 @@ function changeCharacter(direction) {
 function startSlideshow() {
     setInterval(function() {
         changeCharacter(1);  
-    }, 1000);  
+    }, 3000);  
 }
 
 fetchData(); 
