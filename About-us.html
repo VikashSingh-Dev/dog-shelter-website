@@ -71,21 +71,27 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: white;
         }
 
         .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
+            width: 80em;
+            height:50em;
+            margin: 30px auto;
+            font-family:Arial, Helvetica, sans-serif;
+            display: flex;
+            text-align: justify;
+            gap:40px;            
+            justify-content: center;
+            line-height: 40px;
         }
 
         .about-us {
             background-color: white;
-            padding: 30px;
-            margin-top: 30px;
+            padding: 40px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            width:50%;
         }
 
         h1 {
@@ -97,40 +103,15 @@
             font-size: 1.1em;
             margin-bottom: 20px;
         }
-
-        .mission {
-            background-color: #f2f2f2;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-        .carousel {
-            background-color: white;
-            margin-top: 0%;
-            padding: 20px;
-            border-radius: 8px;
-            max-width: 100%;
-            height:50%;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            
-        }
-
-        #item-details img {
-            border-radius: 8px;
-            margin: 15px 0;
-            width:50%;
-            height:10%;
-        }
-
         .btn {
             background-color: #007BFF;
             color: white;
             border: none;
             padding: 10px 20px;
-            margin: 10px;
+            margin-top: 0px;
+            margin-right: 130px;
+            margin-left: 100px;
             border-radius: 5px;
-            font-size: 16px;
             cursor: pointer;
         }
 
@@ -145,8 +126,8 @@
         #item-details img {
             border-radius: 8px;
             margin: 15px 0;
-            width: 740px;
-            height: 450px;
+            width: 500px;
+            height: 300px;
             transition: transform 1s ease-in-out;
         }
     </style>
@@ -174,27 +155,29 @@
         <img src="Banner.png" alt="Adopt a Dog Banner" style="width: 103%; height: 400px;">
     </div>
 
-    <div class="carousel">
-        <h2>Our Dogs</h2>
-        <div id="item-details">
-        
-        <button id="prev-btn" class="btn" onclick="changeCharacter(-1)">Previous</button>
-        <button id="next-btn" class="btn" onclick="changeCharacter(1)">Next</button>
-    </div>
     <div class="container">
-        
-            <h1>About Us</h1>
-            <p>Welcome to our Dog Shelter! We are a group of passionate animal lovers dedicated to rescuing and rehoming dogs in need. Our mission is to give every dog a second chance at a loving home and to promote animal welfare in our community.</p>
-            
-            <div class="mission">
-                <h2>Our Mission</h2>
-                <p>Our goal is simple: to provide a safe, loving, and temporary home for dogs until they can be adopted into their forever families. We work closely with local communities, veterinarians, and volunteers to ensure the well-being of every dog in our care.</p>
-            </div>
-            </div>
+    <div class="about-us">
+            <h1>About Us</h1><br>
+            <p>Pawsome Rescues is a Non-Profit dog shelter that was founded in 2015 and is currently
+                located in Arima, Triniad. Our dog shelter strives to nuture and provide uttermost care,
+                love and protection for dogs and puppies of all breed types. Our work and mission sets 
+                to achieve the goal of finding safe, loving homes for sheltered dogs and educating the 
+                general public on the proper care of adopted and fostered dogs. The Pawsome Rescues Dog 
+                Shelters partners with local volunteers and rescue groups to locate and assist abused or 
+                stray dogs. Our shelter provides top-notch vetinary services, meals, bedding and toys for
+                our dogs. Additionally, our shelter has successfully re-homed and fostered over 360 dogs.</p>
+    
+            <h2>Our Dogs</h2>
+            <div id="item-details"></div>
+            <div class="btns">
+            <button id="prev-btn" class="btn" onclick="changeCharacter(-1)"><</button>
+            <button id="next-btn" class="btn" onclick="changeCharacter(1)">></button>
         </div>
+      </div>
     </div>
 
 <script>
+    
 const apiUrl = 'https://api.thedogapi.com/v1/images/search?limit=40';
 let characterData = [];
 let currentIndex = 0;
@@ -219,7 +202,7 @@ function displayCharacter(index) {
     const itemDetails = document.querySelector('#item-details');
     itemDetails.innerHTML = `
         
-        <img src="${dog.url}" width="300">
+        <img src="${dog.url}">
     `;
 }
 
@@ -236,60 +219,10 @@ function changeCharacter(direction) {
 function startSlideshow() {
     setInterval(function() {
         changeCharacter(1);  
-    }, 4000);  
+    }, 1000);  
 }
 
 fetchData(); 
 
-/*
-const apiUrl = 'https://api.thedogapi.com/v1/images/search?breed_group=Hound&limit=20';
-let characterData = [];
-let currentIndex = 0;
-
-async function fetchData() {
-    try {
-        const response = await fetch(apiUrl);
-        const data = await response.json();
-        characterData = data;
-
-        if (characterData.length > 0) {
-            displayCharacter(currentIndex);
-        } 
-    } catch (error) {
-        console.log(error);
-    }
-}
-
-function displayCharacter(index) {
-    let dog = characterData[index];
-    let itemDetails = document.querySelector('#item-details');
-
-    itemDetails.innerHTML = `
-        <h3>Dog Image</h3>
-        <img src="${dog.url}" width="300">
-    `;
-}
-
-function changeCharacter(direction) {
-    currentIndex += direction;
-
-    let totalDogs = 0;
-
-
-    for (let dog of characterData) {
-        totalDogs++;
-    }
-
-    if (currentIndex < 0) {
-        currentIndex = totalDogs - 1;  
-    } else if (currentIndex >= totalDogs) {
-        currentIndex = 0;  
-    }
-
-    displayCharacter(currentIndex);
-}
-
-fetchData();
-*/
 </script>
 </html>
