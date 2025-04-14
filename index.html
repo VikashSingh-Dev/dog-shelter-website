@@ -3,195 +3,295 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
+    <link rel="stylesheet" href="styleHome.css">
 
-    <title>Dog Adoption</title>
-    <link rel="icon" href="Icon.png" type="image/png">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-           
-           background-color: transparent;
-          
-        }
-        .logo img {
-            max-width: 0.5 px;
-            height: 0.5 px;
-            transition: opacity 0.3s ease;
-        }
-
-        nav {
-            transition: opacity 0.3s ease;
-            padding: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: transparent;
-            
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-        }
-
-        .nav-links li {
-            margin: 0 15px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: black;
-            font-size: 16px;
-            margin-left: 40px;
-            margin-right: 40px;
-        }
-
-        .nav-links a:hover {
-            color: #ffcc00;
-        }
-
-        .log {
-            display: flex;
-            gap: 10px;
-        }
-
-        .log button {
-            padding: 8px 15px;
-            border: none;
-            background-color: #ffcc00;
-            color: black;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 14px;
-        }
-
-        .log button:hover {
-            background-color: #e6b800;
-        }
-
-        .banner {
-            width: 60%;
-            height: 300px; 
-            background-image: url('banner-image.jpg'); /* Replace with your banner image file path */
-            background-size: cover;
-            background-position: center;
-            text-align: center;
-            color: white;
-            padding-top: 100px;
-        }
-
-        .homepage {
-            text-align: center;
-            padding: 50px;
-        }
-
-        h1 {
-            font-size: 40px;
-            color: #333;
-        }
-
-        p {
-            font-size: 18px;
-            color: #666;
-            margin-top: 10px;
-        }
-    .counting {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    position: relative;
-}
-
-.counting img {
-    width: 1400px;
-    height: 300px; 
-    object-fit: cover;
-}
-
-#counter {
-    position: absolute;
-    top: 33%;
-    left: 47%;
-    font-size: 100px;
-    font-weight: bold;
-    color: #d49319;
-}
-
-.text {
-    position: absolute;
-    top: 77%;
-    left: 30%;
-    font-size: 40px;
-    color: white;
-    font-weight: bold;
-    text-align: center;
-    
-}
-.text2{
-    position: absolute;
-    top: 10%;
-    left: 48%;
-    font-size: 50px;
-    color: white;
-    font-weight: bold;
-    text-align: center;
-    
-}
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="icon" href="pngimg.com - paw_PNG69 (3).png">
+    <title>Dog Shelter | Home</title>
 </head>
+
 <body>
-
     <nav>
-        <div class="logo">
-            <a href="index.html">
-                <img src="Dog.png" alt="logo">
-            </a>
+          <a href="index.html" class="brand-name">
+            <h1 class="logo"><i class="fa-solid fa-paw"></i>Paw<span class="split">some</span><span class="alt">Rescues</span></h1>
+          </a>
+
+        <div class="navbar">
+
+            <a href="index.html">Home</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#pets">Dog Gallery</a>
+            <a href="index.html#requirements">Requirements</a>
+            <a href="ContactUs.html"> Contact Us</a>
+            <a href="Form.html">Login</a>
+            <!-- <a href="Adopt.html#adopt">Adopt</a>
+            <a href="Contact.html#contact">Contact</a> -->
         </div>
-        <ul class="nav-links">
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/Adopt a Dog.html">Adopt a Dog</a></li>
-            <li><a href="/About-us.html">About us</a></li>
-            <li><a href="/Contact-Us.html">Contact</a></li>
-        </ul>
-        <div class="log">
-            <button>Log In</button>
-            <button>Sign Up</button>
-        </div>
+
     </nav>
-    <div>
-        <img src="Banner.png" alt="Adopt a Dog Banner" style="width: 104%; height: 400px;">
+
+    <section class="mascotpage">
+
+        <div class="mascot-banner">
+            <h1>Find Your Pawfect New Best Friend Today!</h1>
+            <p>Discover Your Perfect Companion in Our Selection of Loving Pets Available for Adoption.</p>
+
+            <div class="mascot-buttons">
+                <button class="btn-3">Our Pets</button>
+                <button class="btn-3 btn-transparent">Contact Us</button>
+            </div>
+        </div>
+
+        <div class="mascot-pics">
+            <img src="fun-times-with-best-friend_926199-1448428.avif" alt="dog" style="width 200px; height: 300px;">
+            <img src="two-cute-dogs-are-plying-outdoor_1297251-2891.avif" alt="dog" style="max-width 200px; height: 300px;">
+            <img src="ai-generative-high-quality-photo-happy-dog-playing-ball-grass_786887-1244.avif" alt="dog" style="width 150px; height: 300px;">
+        </div>
+
+    </section>
+    
+    <section class="requirements" id="requirements">
+        <div class="requirements-banner">
+            <h1>Our Process For Adoption</h1>
+            <p>We are dedicated to finding loving homes for our furry friends. Our adoption process is designed to ensure that each pet finds the perfect match.</p>
+            <p>We believe in responsible pet ownership and want to make sure that our pets are placed in homes where they will be loved and cared for.</p>
+            <p>We are committed to making the adoption process as smooth and enjoyable as possible.</p>
+            <p>Thank you for considering adopting a pet from us! </p>
+            <p>We look forward to helping you find your new best friend!</p>
+
+            <div class="req-item-container">
+                <div class="req-item">
+                    <div class="req-item-icon" style="background-color: #06f312;">
+                        <i class="fa-regular fa-newspaper"></i>
+                    </div>
+                    <h5>Submitting an application</h5>
+                </div>
+
+                <div class="req-item">
+                    <div class="req-item-icon" style="background-color: #ffe607;">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <h5>Attending an online interview</h5>
+                </div>
+                
+                <div class="req-item">
+                    <div class="req-item-icon" style="background-color: #fb3a00;">
+                        <i class="fa-solid fa-paw"></i>
+                    </div>
+                    <h5>Meeting the pet in person</h5>
+                </div>
+
+                <div class="req-item">
+                    <div class="req-item-icon" style="background-color: #03f4e0;">
+                        <i class="fa-regular fa-file-zipper"></i>
+                    </div>
+                    <h5>Signing an adoption agreement</h5>
+                </div>
+
+                <div class="req-item">
+                    <div class="req-item-icon" style="background-color: #ff00d4;">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+                    <h5>Congrats on finding a match!</h5>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="req-img-wrapper">
+            <img class="req-layer-1" src="paw (1).png" alt="">
+            <img class="req-img req-layer-2" src="png-transparent-puppy-german-shepherd-desktop-puppy-mammal-animals-carnivoran-thumbnail-removebg-preview.png" alt="">
+        </div>
+
+    </section>
+
+    <div class="section-divider">
+        <i class="fa-solid fa-paw divider-icon"></i>
+        <hr>
+        <p class="section-quote">
+            "Every tail tells a story."
+        </p>
     </div>
 
-    <div class="homepage">
-        <h1>Welcome to Pawsome Rescues Dog Adoption Center</h1>
-       
+
+    <section class="pets" id="pets">
+        <div class="pets-banner">
+            <h1><i class="fa-solid fa-paw"></i>Find Dogs to Adopt!</h1>
+        </div>
+
+        <button class="btn-3 btn-pets">
+            <p>Find more</p>
+            <i class="fa-solid fa-arrow-right-long"></i>
+        </button>
+
+    </section>
+
+    <div class="section-divider-2">
+        <i class="fa-solid fa-paw divider-icon"></i>
+        <hr>
+        <p class="section-quote">
+            "Saving one dog won't change the world, but for that one dog, the world changes forever."
+        </p>
     </div>
-    <div class="counting">
-        <img src="image.png" alt="Background Image">
-        <div id="counter">0</div>
-        <div class="text2">Over</div>
-        <div class="text">Lives saved through adoption!</div>
+
+    <div class="about" id="about">
+        <div class="about-banner">
+            <h1>About Us</h1>
+            <p class="reveal-type" data-bg-color="#cccccc" data-fg-color="black">
+                This is not just a <b>pet adoption website</b>; it's a haven for both pets in search of loving homes and families looking for their perfect companions. 
+                We are dedicated to connecting these two worlds, ensuring that every pet finds a place where they are cherished and loved.
+            </p>
+            <!-- <p>We are a dedicated team of animal lovers committed to rescuing and rehoming pets in need. Our mission is to provide a safe haven for abandoned and neglected animals, and to find them loving forever homes.</p>
+            <p>We believe that every pet deserves a second chance, and we work tirelessly to ensure that each animal in our care receives the love and attention they deserve.</p>
+            <p>Our team is passionate about animal welfare and is dedicated to making a positive impact in the lives of pets and their future families.</p> -->
+        
+            <div class="about-info">
+                <div class="about-info-item">
+                    <h5>100+</h5>
+                    <h6>Saved Pets</h6>
+                </div>
+                <hr class="about-info-divider"/>
+
+                <div class="about-info-item">
+                    <h5>>90%</h5>
+                    <h6>Adoption Rate</h6>
+                </div>
+                <hr class="about-info-divider"/>
+
+                <div class="about-info-item">
+                    <h5>4.8 Star Rating</h5>
+                    <h6>Loved by Adopters</h6>
+                </div>
+            </div>
+            <button class="about-us-button">What We Do<i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+
+        <img src="istockphoto-1367150296-612x612.jpg" alt="">
     </div>
-   
-    <script>
-        let count = 0;
-      
-        function updateCount() {
-            if (count<360){
-          count = count + 5;
-          document.getElementById("counter").innerText = count;
-        }
-    }
-        setInterval(updateCount, 350);
-    
-      </script>
- 
+
+    <div class="section-divider-3">
+        <i class="fa-solid fa-paw divider-icon"></i>
+        <hr>
+        <p class="section-quote">
+            "Dogs don't need perfect homes - just ones filled wih love."
+        </p>
+    </div>
+
+    <div class="reviews" id="reviews">
+        <h6>Reviews</h6>
+        <h1>What People Say</h1>
+
+        <div class="review-container">
+            <div class="review-item">
+                <div class="reviewers">
+                    <div class="review-name">
+                        <img src="prof_pic1(!).jpg" alt="" style="max-width: 50px; max-height: 50px;  border-radius: 50%;">
+
+                        <div class="review-name-item">
+                            <h4>Livvy Dunn</h4>
+                            <p>J. Jonah Jameson's Owner</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-quote-right"></i>
+                </div>
+                <p class="review-text">
+                    Adopting J. Jonah Jameson was a life-changing decision. He has brought so much joy and love into my life. 
+                    The adoption process was smooth, and the team was incredibly supportive. I can't imagine my life without him!
+                </p>
+            </div>
+
+            <div class="review-item">
+                <div class="reviewers">
+                    <div class="review-name">
+                        <img src="prof_pic(4).jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
+
+                        <div class="review-name-item">
+                            <h4>Jinwoo Sung</h4>
+                            <p>Beru's Owner</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-quote-right"></i>
+                </div>
+                <p class="review-text">
+                    Beru declared himself king on arrival. Mailmen tremble. Cats kneel Pawsome Rescues handled the summon-no mana cost. 
+                    Fast, friendly and didn't flinch once. Shadows whisper their approval. Arise...abd adopt your companion today!
+                </p>
+            </div>
+
+            <div class="review-item">
+                <div class="reviewers">
+                    <div class="review-name">
+                        <img src="prof_pic3(1).jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
+
+                        <div class="review-name-item">
+                            <h4>Leonor Schmitt</h4>
+                            <p>Sapphire's Owner</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-quote-right"></i>
+                </div>
+                <p class="review-text">
+                    Adopting Sapphire was a dream come true. She is the sweetest dog and has brought so much happiness into my life. 
+                    The team at Pawsome Rescues was amazing and helped me find the perfect match. I couldn't be happier!
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <h2>Quick Links</h2>
+                <div class="link-container">
+                    <div class="links">
+                        <a href="/">Home</a>
+                        <a href="index.html#about">About Us</a>
+                        <a href="index.html#pets">Pets</a>
+                    </div>
+
+                    <div class="links">
+                        <a href="index.html#requirements">Requirements</a>
+                        <a href="index.html#reviews">Reviews</a>
+                        <a href="index.html#footer">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-brand">
+                <h1 class="logo" style="font-size: 36px;"><i class="fa-solid fa-paw"></i>Paw<span class="split">some</span><span class="alt">Rescues</span></h1>
+                <p>Find your pawfect companion today!</p>
+                <div class="socials">
+                    <a href="#" class="icon"><i class="fa-brands fa-google"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-contact-info">
+                <h2>Enquiries</h2>
+                <div class="contact-info-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <p>pawfectRescues@gmail.com</p>
+                </div>
+
+                <div class="contact-info-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p>1234 Dog Street, Pet City, USA</p>
+                </div>
+
+                <div class="contact-info-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <p>+1 (123) 456-7890</p>
+                </div>
+            </div>
+        </div>
+
+        <p class="copyright">Copyright &copy; 2025. All Rights Reserved to <h6 class="logo"><i class="fa-solid fa-paw"></i>Paw<span class="split">some</span><span class="alt">Rescues</span></h6></p>
+    </footer>
+
+    <script src="Home.js"></script>
 </body>
 </html>
