@@ -212,7 +212,6 @@ nav.sticky {
     font-size: 22px;
     color: white;
     border-radius: 12px;
-    border: 1px solid black);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -359,6 +358,7 @@ nav.sticky {
 .about-info-item h5 {
     font-size: 28px;
     font-weight: 800;
+    color: #227a02;
 }
 
 .about-info-item h6 {
@@ -388,7 +388,6 @@ nav.sticky {
 .reviews h6 {
     font-size: 18px;
     font-weight: 800;
-    color: var(--accent);
 }
 
 .reviews h1 {
@@ -438,6 +437,7 @@ nav.sticky {
 .review-name h4 {
     font-size: 20px;
     font-weight: 800;
+    color: #227a02;
 }
 
 .review-name p {
@@ -464,6 +464,9 @@ footer {
 
 .footer-container {
     display: flex;
+    flex: 1;
+    min-width: 200px;
+    padding: 1rem;
 }
 
 .footer-links {
@@ -472,13 +475,14 @@ footer {
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     justify-content: center;
     padding: 32px 50px;
-
+    padding-top: 8px;
 }
 
 .footer-links h2 {
-    font-size: 37px;
+    font-size: 33px;
     font-weight: 800;
     margin-bottom: 10px;
+    color: var(--text-color);
 }
 
 .link-container {
@@ -506,24 +510,35 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 32px 120px;
+    padding: 32px 80px;
     border-top: none !important;
     border: 1px solid rgba(255, 255, 255, 0.5);
+    padding-top: 10px;
 }
 
 .footer-brand h1 {
-    font-size: 48px;
     font-weight: 800;
+    display: flex;
 }
 
 .footer-brand p {
-    font-size: 20px;
+    font-size: 15px;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.logo .split {
+    color: #39a927;
 }
 
 .socials {
     display: flex;
     gap: 24px;
-    margin-top: 14px;
+    margin-top: 30px;
 }
 
 .socials a {
@@ -546,10 +561,11 @@ footer {
     justify-content: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     padding: 32px 50px;
+    padding-top: 0;
 }
 
 .footer-contact-info h2 {
-    font-size: 36px;
+    font-size: 33px;
     font-weight: 800;
     margin-top : 10px;
 }
@@ -573,26 +589,61 @@ footer {
     cursor: pointer;
 }
 
-.copyright {
-    margin-top: 20px;
+.newsletter {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-top: none;
+    border-right: none;
+    padding: 20px;
+    padding-top: 9px;
 }
 
-@media (max-width: 768px) {
-    html [
-        font-size: 65%;
-    ]
+.newsletter h2 {
+    font-size: 33px;
+    font-weight: 800;
+    margin-bottom: 5px;
+    margin-top: 0px;
+}
 
-    nav {
-        padding: 20px;
-    }
+.newsletter p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
 
-    .mascot-banner {
-        width: 90%;
-    }
+.newsletter form {
+    width : 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-    .pet-item h3 {
-        font-size: 22px;
-    }
+.newsletter form input {
+    padding-inline: 0.5rem;
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 1 rem;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    border: 3px solid var(--highlight-color);
+}
+.newsletter-btn {
+    width: 80px;
+    height: 20px;
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 11px;
+}
+
+.copyright {
+    margin-top: 0;
+}
+
+footer a:hover {
+    color: var(--accent-color);
 }
 
 button, .btn {
@@ -619,7 +670,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-    color: var(--primary-color)
+    color: var(--primary-color);
     text-decoration: none;
 }
 
@@ -637,19 +688,7 @@ nav a:hover {
     color: var(--highlight-color);
 }
 
-.logo {
-    font-size: 26px;
-    font-weight: 700;
-    color: var(--text-color);
-}
 
-.logo .split {
-    color: var(--primary-color);
-}
-
-footer a:hover {
-    color: var(--accent-color);
-}
 
 .section-divider {
     text-align: center;
@@ -815,7 +854,7 @@ footer a:hover {
 .article-text a {
     text-decoration: none;
     font-weight: bold;
-    color: var(--highlight-color);
+    color: #227a02;
     border: none;
     box-shadow: none;
 }
