@@ -190,6 +190,10 @@ nav.sticky {
     font-weight: 900;
 }
 
+.mascot-banner h1 i {
+    margin-right: 5px;
+}
+
 .mascot-banner p {
     font-size: 18px;
     font-weight: 600;
@@ -265,6 +269,10 @@ nav.sticky {
     margin-bottom: 10px;
 }
 
+.requirements-banner h1 i {
+    margin-right: 5px;
+}
+
 .requirements-banner p {
     font-size: 16px;
     font-weight: 600;
@@ -323,6 +331,10 @@ nav.sticky {
     font-size: 46px;
     font-weight: 900;
     margin-bottom: 20px;
+}
+
+.about-banner h1 i {
+    margin-right: 5px;
 }
 
 .about-banner p {
@@ -384,6 +396,10 @@ nav.sticky {
     font-weight: 900;
 }
 
+.reviews h1 i {
+    margin-right: 5px;
+}
+
 .review-container {
     display: flex;
     margin-top: 34px;
@@ -443,7 +459,7 @@ footer {
     padding: 10px 20px;
     align-items: center;
     overflow: hidden;
-    margin-top: 100px;
+    margin-top: 40px;
 }
 
 .footer-container {
@@ -653,6 +669,12 @@ footer a:hover {
     margin: 80px auto 20px;
     width: 100%;
 }
+.section-divider-4 {
+    text-align: center;
+    margin: 80px auto 20px;
+    width: 100%;
+    margin-bottom: 90px;
+}
 
 .divider-icon {
     font-size: 32px;
@@ -660,7 +682,7 @@ footer a:hover {
     margin-bottom: 12px;
 }
 
-.section-divider hr, .section-divider-2 hr, .section-divider-3 hr {
+.section-divider hr, .section-divider-2 hr, .section-divider-3 hr, .section-divider-4 hr {
     width: 60%;
     height: 2px;
     background-color: var(--secondary-color);
@@ -744,3 +766,69 @@ footer a:hover {
     z-index: 2;
 }
 
+.article-bg {
+    background-color: #FAF3E0;
+    padding: 30px 20px;
+}
+
+.article-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+}
+
+.article-header h2 {
+    margin-bottom: 50px;
+    margin-top: 0;
+    text-align: center;
+    font-size: 46px;
+}
+
+.article-header h2 i {
+    margin-right: 5px;
+}
+
+.article-card {
+    display: flex;
+    width: 500px;
+    height: fit-content;
+    background-color: #fdfcf7;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.article-card img {
+    width: 100px;
+    height: 70px;
+    object-fit: cover;
+}
+
+.article-text {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+
+}
+
+.article-text a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--highlight-color);
+    border: none;
+    box-shadow: none;
+}
+
+.article-text a:hover {
+    text-decoration: underline;
+    color: var(--accent-color);
+}
+
+.article-text a p {
+    margin: 0;
+    font-size: 1rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
