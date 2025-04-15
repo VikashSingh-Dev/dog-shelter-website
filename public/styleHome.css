@@ -115,9 +115,23 @@ nav.sticky {
     transition: all 0.2s ease-out;
 }
 
+.navbar a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: var(--primary-color);
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+
 .navbar a:hover {
-    background-color: var(--highlight-color);
-    color: white;
+    color: var(--primary-color);
+}
+
+.navbar a:hover:after {
+    width: 100%;
 }
 
 .btn {
@@ -292,18 +306,23 @@ nav.sticky {
 .pets {
     display: flex;
     flex-direction: column;
-    align-items: center;
     margin-top: 80px;
+    background: url('1144120.jpg') no-repeat center center/cover;
+    background-size: cover;
 }
+
 
 .pets-banner {
     font-size: 56px;
-    color: #7291ff;
+
 }
 
 .pets-banner h1 {
     font-size: 48px;
     font-weight: 800;
+    color: var(--primary-color);
+    text-align: right;
+    padding: 20px 35px;
 }
 
 .btn-pets {
@@ -651,13 +670,14 @@ footer a:hover {
 
 .section-divider {
     text-align: center;
-    margin: 170px auto 40px;
+    margin: 130px auto 40px;
     width: 100%;
 }
 
 .section-divider-2 {
     text-align: center;
-    margin: 80px auto 40px;
+    margin: 50px auto 40px;
+    margin-bottom: 60px;
     width: 100%;
 }
 
