@@ -303,39 +303,6 @@ nav.sticky {
     font-weight: 600;
 }
 
-.pets {
-    display: flex;
-    flex-direction: column;
-    margin-top: 80px;
-    background: url('1144120.jpg') no-repeat center center/cover;
-    background-size: cover;
-}
-
-
-.pets-banner {
-    font-size: 56px;
-
-}
-
-.pets-banner h1 {
-    font-size: 48px;
-    font-weight: 800;
-    color: var(--primary-color);
-    text-align: right;
-    padding: 20px 35px;
-}
-
-.btn-pets {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: 235px;
-    height: 60;
-    border-radius: 8px;
-    margin-top: 48px;
-}
-
 .about {
     display: flex;
     margin-top: 100px;
