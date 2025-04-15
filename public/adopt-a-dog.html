@@ -3,75 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adopt A Dog Page</title>
-    <link rel="icon" href="Icon.png" type="image/png">
+    <link rel="stylesheet" href="styleHome.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="icon" href="pngimg.com - paw_PNG69 (3).png">
+    <title>Dog Shelter | Home Page</title>
+    </head>
     <style>
-      
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            background-color: #f8f8f8;
-        }
-        .logo img {
-            max-width: 0.5 px;
-            height: 0.5 px;
-        }
-
-        nav {
-            background-color: whitesmoke;
-            padding: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-        }
-
-        .nav-links li {
-            margin: 0 15px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: black;
-            font-size: 16px;
-            margin-left: 40px;
-            margin-right: 40px;
-        }
-
-        .nav-links a:hover {
-            color: #ffcc00;
-        }
-
-        .log {
-            display: flex;
-            gap: 10px;
-        }
-
-        .log button {
-            padding: 8px 15px;
-            border: none;
-            background-color: #ffcc00;
-            color: black;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 14px;
-        }
-
-        .log button:hover {
-            background-color: #e6b800;
-        }
-        
-
-        main {
+ main {
       display: grid;
       flex-wrap: wrap;
       justify-content: center;
@@ -165,40 +104,63 @@
   background-color: rgb(48, 132, 228);
   color: white;
 }
+
 section.card2 button {
-  padding: 8px 16px;
+  padding: 2px 2px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  margin: 5px;
+  margin: 2px;
   margin-left: 30px; 
   background-color: rgb(48, 132, 228);
   color: white;
+  width: 80px;
+  height: 40px;
 }
 
 section.card2 {
-  width: 97vw;
+  width: 57vw;
   margin-left: 10px;
-  padding: 30px;
+  padding: 15px;
   background-color: #fff; 
   border-radius: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
 }
 
 section.card2 button:hover {
   background-color: rgb(30, 110, 200);
 }
-        </style>
+    </style>
 </head>
+
 <body>
-    
     <nav>
-        <div class="logo">
-            <a href="index.html">
-                <img src="Dog.png" alt="logo">
-            </a>
+          <a href="index.html" class="brand-name">
+            <h1 class="logo"><i class="fa-solid fa-paw"></i>Paw<span class="split">some</span><span class="alt">Rescues</span></h1>
+          </a>  
+          <div class="navbar">
+
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="adopt-a-dog.html">Dog Gallery</a>
+            <a href="index.html#requirements">Requirements</a>
+            <a href="contact-us.html"> Contact Us</a>
+            <a href="Form.html">Login</a>
+
+            <a href="about.html">About</a>
+            <a href="adopt-a-dog.html">Dog Gallery</a>
+            <!-- <a href="#requirements">Requirements</a> -->
+            <a href="contact-us.html"> Contact Us</a>
+            <a href="form.html">Login</a>
+            <!-- <a href="Adopt.html#adopt">Adopt</a>
+            <a href="Contact.html#contact">Contact</a> -->
         </div>
+
+    </nav>    
+<body>
+
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="adopt-a-dog.html">Adopt a Dog</a></li>
@@ -210,6 +172,7 @@ section.card2 button:hover {
             <button>Sign Up</button>
         </div>
     </nav>
+    
     <div>
         <img src="Banner2.png" alt="Adopt a Dog Banner" style="width: 100%; height: 600px;">
     </div>
