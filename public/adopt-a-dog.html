@@ -207,6 +207,8 @@ background-color: #FFB74D;
   </div>
 <script>
     let state = [];
+    let API_KEY = 'live_cBNFyTAX96wtUWcpuKTMeHKNSTjzo9D2zJkpR4ducZLR79edMXzBhsPtw7GbgCPs';
+    const subId = 'user-123';
     function displayBreeds(data) {
     let result = document.querySelector('#result');
     let html = '';
@@ -217,8 +219,6 @@ background-color: #FFB74D;
       imageUrl = dog.image.url;
       } else if (dog.reference_image_id) {
         imageUrl = `https://cdn2.thedogapi.com/images/${dog.reference_image_id}.jpg`;
-      }else {
-        imageUrl='new.png';
       }
 
       if (imageUrl) {
@@ -230,9 +230,10 @@ background-color: #FFB74D;
             <p><strong>Breed Group:</strong> ${dog.breed_group}</p><br>
             <p><strong>Life Span:</strong> ${dog.life_span}</p><br>
             <button onclick="showDetails(${dog.id})">View Details</button>
+            <button onclick="favouriteDog('${dog.id}')">❤️ Favourite</button>
           </article>
-        `;
-      }
+       `;
+        }
     }
     result.innerHTML = html;
   }
@@ -297,6 +298,32 @@ function filterByLife(range) {
 
   displayBreeds(filtered);
 }
+  
+async function favouriteDog(imageId) {
+  const bodyData = JSON.stringify({
+    image_id: imageId,
+    sub_id: subId  
+  });
+
+  try {
+    const response = await fetch('https://api.thedogapi.com/v1/favourites', {
+      method: 'POST',
+      headers: {
+        'x-api-key': API_KEY,
+        'Content-Type': 'application/json'
+      },
+      body: bodyData
+    });
+
+    const result = await response.json();
+    console.log("Favourited:", result);
+    alert('Dog added to favourites!');
+  } catch (error) {
+    alert('Error favouriting dog!');
+    console.error(error);
+  }
+}
+
 function showDetails(breedId) {
         let breed = null;
 
