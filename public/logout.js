@@ -1,6 +1,6 @@
 // firebase config
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
-import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyATwsq8hyn3qo-t7ro41vT5ACS-2XaO1bY",
@@ -32,18 +32,3 @@ if (logoutBtn) {
   });
 }
 
-onAuthStateChanged(auth, (user) => {
-    const logoutBtn = document.getElementById('logout-btn');
-    if (user) {
-        console.log("User is signed in: ", user.email);
-        if (logoutBtn) {
-            logoutBtn.style.display = 'block'; // Show the logout button
-        }
-        else {
-            console.log("No user is currently logged in.");
-            if (logoutBtn) {
-                logoutBtn.style.display = 'none'; // Hide the logout button
-            }
-        } 
-    }
-});
