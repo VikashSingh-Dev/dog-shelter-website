@@ -140,6 +140,11 @@ section.card2 button:hover {
 .search-bar button:hover{
 background-color: #FFB74D;
 }
+
+.card img[src$="paws.jpg"] {
+  opacity: 0.5;
+  object-fit: contain;
+}
     </style>
 </head>
 
@@ -207,18 +212,20 @@ background-color: #FFB74D;
     let html = '';
 
     for (let dog of data) {
-
       let imageUrl = '';
       if (dog.image && dog.image.url) {
-        imageUrl = dog.image.url;
+      imageUrl = dog.image.url;
       } else if (dog.reference_image_id) {
         imageUrl = `https://cdn2.thedogapi.com/images/${dog.reference_image_id}.jpg`;
+      }else {
+        imageUrl='new.png';
       }
 
       if (imageUrl) {
+        
         html += `
           <article class="card">
-              <img src="${imageUrl}" alt="${dog.name}" width="220" height="180" />
+              <img src="${imageUrl}" alt="${dog.name}" width="220" height="180"/>
             <p><strong>Breed Type:</strong> ${dog.name}</p><br>
             <p><strong>Breed Group:</strong> ${dog.breed_group}</p><br>
             <p><strong>Life Span:</strong> ${dog.life_span}</p><br>
@@ -240,6 +247,9 @@ background-color: #FFB74D;
 }
 
 getBreeds();
+
+
+
 function search() {
             let searchKey = document.querySelector('#searchKey').value; 
             let results = [];
