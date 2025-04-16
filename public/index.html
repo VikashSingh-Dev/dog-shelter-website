@@ -169,7 +169,6 @@
         <h1><i class="fa-solid fa-paw"></i>What People Say</h1>
 
         <div class="review-wrapper">
-            <button id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
 
             <div class="review-slider" id="review-slider">
                 <!-- firebase injections-->
@@ -244,22 +243,25 @@
                         The team at Pawsome Rescues was amazing and helped me find the perfect match. I couldn't be happier!
                     </p>
                 </div>
-
             </div>
+        </div>
+
+        <div class="review-controls">
+            <button id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
             <button id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
 
         <form id="reviewForm" style="display: none; margin-top: 40px;">
             <textarea placeholder="Leave a review..." id="reviewText" required></textarea><br>
             <label for="starRating">Rating:</label>
-            <select id="starRating">
+            <select id="starRating" style="margin-right: 30px;">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5" selected>5</option>
             </select>
-            <button class="btn-3" type="submit" style="margin-top: 10px;">Submit Review</button>
+            <button class="btn-3" type="submit" style="margin-top: 10px;">Submit</button>
         </form>
 
     </section>
