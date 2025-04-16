@@ -143,6 +143,9 @@ nav.sticky {
     display: flex;
     font-size: 18px;
     font-weight: 500;
+    border: none;
+    cursor: pointer;
+    vertical-align: middle;
 }
 
 .btn {
