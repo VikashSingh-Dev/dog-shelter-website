@@ -14,8 +14,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-import { signOut } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
-
 // logout function
 const logoutBtn = document.getElementById('logout-btn');
 if (logoutBtn) {
