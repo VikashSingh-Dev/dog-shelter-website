@@ -38,9 +38,11 @@
 
             <div class="mascot-buttons">
                 <button class="btn-3" onclick="window.location.href='adopt-a-dog.html'">Our Dogs</button>
-                <button class="btn-3 btn-transparent">Donate</button>
+                <button class="btn-3 btn-transparent" onclick="showPopup()">Donate</button>
+                <div class="overlay" id="overlay" onclick="closePopup()"></div>
+             </div>
+
             </div>
-        </div>
 
         <div class="mascot-pics">
             <img src="fun-times-with-best-friend_926199-1448428.avif" alt="dog" style="width 200px; height: 300px;">
@@ -362,7 +364,19 @@
             </div>
         </div>
 
+        <div class="popup" id="donatePopup">
+            <span class="close-btn" onclick="closePopup()">X</span>
+            <h3>Donation Form</h3>
         
+            <div id="formFields">
+                <input type="text" id="donorName" placeholder="Your name or 'Anonymous'"><br><br>
+                <input type="text" id="checkNumber" placeholder="Cheque number"><br><br>
+                <input type="text" id="cashAmount" placeholder="Cash amount"><br><br>
+                <button onclick="submitDonation()">Submit</button>
+            </div>
+        
+            <div class="checkmark" id="thankYou" style="display: none;">✔️ Thank you for your support!</div>
+        </div>
 
         <p class="copyright">Copyright &copy; 2025. All Rights Reserved to <h6 class="logo"><i class="fa-solid fa-paw"></i>Paw<span class="split">some</span><span class="alt">Rescues</span></h6></p>
     </footer>
