@@ -135,6 +135,16 @@ nav.sticky {
     width: 100%;
 }
 
+#logout-btn {
+    height: 20px;
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 18px;
+    font-weight: 500;
+}
+
 .btn {
     color: white;
     font-size: 25px;
