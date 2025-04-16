@@ -168,62 +168,102 @@
         <h6>Reviews</h6>
         <h1><i class="fa-solid fa-paw"></i>What People Say</h1>
 
-        <div class="review-container">
-            <div class="review-item">
-                <div class="reviewers">
-                    <div class="review-name">
-                        <img src="prof_pic1(!).jpg" alt="" style="max-width: 50px; max-height: 50px;  border-radius: 50%;">
+        <div class="review-wrapper">
 
-                        <div class="review-name-item">
-                            <h4>Livvy Dunn</h4>
-                            <p>J. Jonah Jameson's Owner</p>
+            <div class="review-slider" id="review-slider">
+                <!-- firebase injections-->
+                <div class="review-item">
+                    <div class="reviewers">
+                        <div class="review-name">
+                            <img src="prof_pic1(!).jpg" alt="" style="max-width: 50px; max-height: 50px;  border-radius: 50%;" class="review-img">
+    
+                            <div class="review-name-item">
+                                <h4>Livvy Dunn</h4>
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half"></i>
+                                </div>
+                            </div>
                         </div>
+                        <i class="fa-solid fa-quote-right"></i>
                     </div>
-                    <i class="fa-solid fa-quote-right"></i>
+                    <p class="review-text">
+                        Adopting J. Jonah Jameson was a life-changing decision. He has brought so much joy and love into my life. 
+                        The adoption process was smooth, and the team was incredibly supportive. I can't imagine my life without him!
+                    </p>
                 </div>
-                <p class="review-text">
-                    Adopting J. Jonah Jameson was a life-changing decision. He has brought so much joy and love into my life. 
-                    The adoption process was smooth, and the team was incredibly supportive. I can't imagine my life without him!
-                </p>
-            </div>
-
-            <div class="review-item">
-                <div class="reviewers">
-                    <div class="review-name">
-                        <img src="prof_pic(4).jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
-
-                        <div class="review-name-item">
-                            <h4>Jinwoo Sung</h4>
-                            <p>Beru's Owner</p>
+    
+                <div class="review-item">
+                    <div class="reviewers">
+                        <div class="review-name">
+                            <img src="prof_pic(4).jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;" class="review-img">
+    
+                            <div class="review-name-item">
+                                <h4>Jinwoo Sung</h4>
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half"></i>
+                                </div>
+                            </div>
                         </div>
+                        <i class="fa-solid fa-quote-right"></i>
                     </div>
-                    <i class="fa-solid fa-quote-right"></i>
+                    <p class="review-text">
+                        Beru declared himself king on arrival. Mailmen tremble. Cats kneel Pawsome Rescues handled the summon-no mana cost. 
+                        Fast, friendly and didn't flinch once. Shadows whisper their approval. Arise...and adopt your companion today!
+                    </p>
                 </div>
-                <p class="review-text">
-                    Beru declared himself king on arrival. Mailmen tremble. Cats kneel Pawsome Rescues handled the summon-no mana cost. 
-                    Fast, friendly and didn't flinch once. Shadows whisper their approval. Arise...and adopt your companion today!
-                </p>
-            </div>
-
-            <div class="review-item">
-                <div class="reviewers">
-                    <div class="review-name">
-                        <img src="prof_pic3(1).jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
-
-                        <div class="review-name-item">
-                            <h4>Leonor Schmitt</h4>
-                            <p>Sapphire's Owner</p>
+    
+                <div class="review-item">
+                    <div class="reviewers">
+                        <div class="review-name">
+                            <img src="prof_pic3(1).jpg" alt="" style="max-width: 50px; max-height: 50px; border-radius: 50%;" class="review-img">
+    
+                            <div class="review-name-item">
+                                <h4>Leonor Schmitt</h4>
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
                         </div>
+                        <i class="fa-solid fa-quote-right"></i>
                     </div>
-                    <i class="fa-solid fa-quote-right"></i>
+                    <p class="review-text">
+                        Adopting Sapphire was a dream come true. She is the sweetest dog and has brought so much happiness into my life. 
+                        The team at Pawsome Rescues was amazing and helped me find the perfect match. I couldn't be happier!
+                    </p>
                 </div>
-                <p class="review-text">
-                    Adopting Sapphire was a dream come true. She is the sweetest dog and has brought so much happiness into my life. 
-                    The team at Pawsome Rescues was amazing and helped me find the perfect match. I couldn't be happier!
-                </p>
             </div>
-
         </div>
+
+        <div class="review-controls">
+            <button id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
+            <button id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+
+        <form id="reviewForm" style="display: none; margin-top: 40px;">
+            <textarea placeholder="Leave a review..." id="reviewText" required></textarea><br>
+            <label for="starRating">Rating:</label>
+            <select id="starRating" style="margin-right: 30px;">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5" selected>5</option>
+            </select>
+            <button class="btn-3" type="submit" style="margin-top: 10px;">Submit</button>
+        </form>
+
     </div>
 
     <div class="section-divider-4">
@@ -384,5 +424,6 @@
 
     <script src="Home.js"></script>
     <script src="logout.js" type="module"></script>
+    <script src="reviews.js" type="module"></script>
 </body>
 </html>

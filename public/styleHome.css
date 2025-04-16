@@ -454,6 +454,8 @@ button:hover {
     flex-direction: column;
     align-items: center;
     margin-top: 95px;
+    text-align: center;
+    padding: 2rem;
 }
 
 .reviews h6 {
@@ -470,11 +472,11 @@ button:hover {
     margin-right: 5px;
 }
 
-.review-container {
+/* .review-container {
     display: flex;
     margin-top: 34px;
     gap: 18px;;
-}
+} */
 
 .review-item {
     display: flex;
@@ -485,6 +487,10 @@ button:hover {
     border-radius: 12px;
     padding: 32px;
     background-color: #FAF3E0;
+    flex: 0 0 400px;
+    transition: transform 0.3s ease;
+    transform: scale(0.95);
+    opacity: 0.5;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     border: 1px solid var(--secondary-color);
 }
@@ -511,15 +517,86 @@ button:hover {
     color: #227a02;
 }
 
-.review-name p {
-    opacity: 0.8;
-}
-
 .review-text {
     font-size: 1rem;
     line-height: 1.6;
     font-weight: 600;
     margin-top: 28px;
+}
+
+.review-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding: 0 40px;
+    gap: 18px;
+    scroll-behavior: smooth;
+    margin: 1rem 0;
+}
+
+.review-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    transform: scale(0.95);
+    overflow-x: auto;
+    gap: 18px;
+    padding: 18px;
+}
+
+.review-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.review-item.active {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+.review-img {
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 50%;
+}
+
+button#prevBtn, button#nextBtn {
+    background-color: var(--accent-color);
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+    transition: background 0.3s;
+    width: 50px;
+    height: 50px;
+}
+
+button#prevBtn:hover, button#nextBtn:hover {
+    background-color: var(--highlight-color);
+}
+
+.review-controls {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+textarea#reviewText {
+    width: 100%;
+    padding: 10px;
+    height: 80px;
+    border-radius: 10px;
+    border: 2px solid var(--primary-color);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.stars i {
+    color: gold;
+    font-size: 20px;
 }
 
 footer {
@@ -781,7 +858,7 @@ nav a:hover {
 }
 .section-divider-4 {
     text-align: center;
-    margin: 80px auto 20px;
+    margin: 45px auto 20px;
     width: 100%;
     margin-bottom: 90px;
 }
