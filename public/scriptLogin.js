@@ -30,7 +30,7 @@ loginButton.addEventListener('click', () => {
 
 // firebase config
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyATwsq8hyn3qo-t7ro41vT5ACS-2XaO1bY",
@@ -44,50 +44,64 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// signup function
-const signupForm = document.querySelector('.sign-up form');
-signupForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const username = signupForm.querySelector('input[placeholder="Name"]').value.trim();
-  const password = signupForm.querySelector('input[placeholder="Password"]').value;
+// load dom first
+document.addEventListener('DOMContentLoaded', () => {
+  // signup function
+  const signupForm = document.querySelector('.sign-up form');
+  if (signupForm) {
+    signupForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const username = signupForm.querySelector('input[placeholder="Name"]').value.trim();
+      const password = signupForm.querySelector('input[placeholder="Password"]').value;
 
-  const fakeEmail = `${username}@pawsome.com`;
+      const fakeEmail = `${username}@pawsome.com`;
 
-  createUserWithEmailAndPassword(auth, fakeEmail, password)
-    .then((userCredential) => {
-      // Signed in 
-      console.log("Signup successful!", userCredential.user);
-      alert("Account created successfully!");
-    })
-    .catch((error) => {
-      console.error("Signup error", error.message);
-      alert("Signup failed: " + error.message);
+      createUserWithEmailAndPassword(auth, fakeEmail, password)
+        .then((userCredential) => {
+          // Signed in 
+          console.log("Signup successful!", userCredential.user);
+          alert("Account created successfully!");
+        })
+        .catch((error) => {
+          console.error("Signup error", error.message);
+          alert("Signup failed: " + error.message);
+        });
     });
-});
+  }
+  // login function
+  const loginForm = document.querySelector('.log-in form');
+  if (loginForm) {
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const username = loginForm.querySelector('input[placeholder="Username"]').value.trim();
+      const password = loginForm.querySelector('input[placeholder="Password"]').value;
 
-// login function
-const loginForm = document.querySelector('.log-in form');
-loginForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const username = loginForm.querySelector('input[placeholder="Username"]').value.trim();
-  const password = loginForm.querySelector('input[placeholder="Password"]').value;
+      const fakeEmail = `${username}@pawsome.com`;
 
-  if (username !== 'bob' || password !== 'bobpass') {
-    alert("Only 'bob' is allowed to login with password 'bobpass'.");
-    return;
+      if (username !== 'bob' || password !== 'bobpass') {
+        alert("Only 'bob' is allowed to login with password 'bobpass'.");
+        return;
+      }
+
+      signInWithEmailAndPassword(auth, fakeEmail, password)
+        .then((userCredential) => {
+          // Logged in 
+          console.log("Login successful!", userCredential.user);
+          alert("Welcome Back, Bob!");
+          window.location.href = "index.html"; // Redirect to home page after login
+        })
+        .catch((error) => {
+          console.error("Login error", error.message);
+          alert("Login failed: " + error.message);
+        });
+      });
   }
 
-  const fakeEmail = `${username}@pawsome.com`;
-
-  signInWithEmailAndPassword(auth, fakeEmail, password)
-    .then((userCredential) => {
-      // Logged in 
-      console.log("Login successful!", userCredential.user);
-      alert("Welcome Back!");
-      window.location.href = "index.html"; // Redirect to home page after login
-    })
-    .catch((error) => {
-      console.error("Login error", error.message);
-      alert("Login failed: " + error.message);
-    });
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      console.log("User is logged in:", user.email);
+    } else {
+      console.log("No user is currently logged in.");
+    }
   });
+});
