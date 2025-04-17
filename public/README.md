@@ -15,6 +15,7 @@
     -UI Design
     -Designer of all other pages and features associated with them
     -Banner design for About Us and Adopt pages
+    -Wireframes
 
 3. F.M. :
     -Marketing 
