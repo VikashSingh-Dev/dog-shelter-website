@@ -6,7 +6,8 @@
 This is a dog adoption website which connects rescued dogs and potential adopters. The theme for this website is built around green and earthy colours to create a calm, inviting and emotionally persuasive interface.
 
 The colour scheme was designed solely with the user in mind, balancing a clean, professional look and emotional appeal. The theme mimics nature with its greens, which is calming and peaceful, reinforcing the idea of giving rescued pets a fresh start in a loving environment. The earthy browns create a warm and cozy atmosphere which makes the site feel welcoming, akin to that of a loving home. This complementary contrast of the green and brown seeks to develop a subconscious emotional environment, connecting the user and the featured dogs. 
-This is enhanced by the warm accent colour which adds vibrance, supports interaction and stimulates optimism as it is typically used when the user engages with something, such as hovering over buttons. 
+
+This is enhanced by the warm accent colour which adds vibrance, supports interaction and stimulates optimism. It is typically used when the user engages with something, such as hovering over buttons. 
 
 Lastly, the beige and off-white backgrounds provide contrast with the text, emphasising clarity and reducing cognitive load, in addition to keeping with the theme.
 
@@ -42,6 +43,7 @@ This colour palette was chosen with the specific intent to cater solely towards 
 - Firebase Authentication for login/signup form(one user)
 - Logout button
 - Firebase Firestore for interactive review section
+- User can only add reviews if they are bob and logged in
 - Navbar glow on scroll
 - Navbar hover Animation
 - Smooth navigation between pages
@@ -51,6 +53,11 @@ This colour palette was chosen with the specific intent to cater solely towards 
 - Bookmarking and view details in card gallery
 
 ##Technologies used
+- HTML, CSS, JS
+- Firebase Authentication
+- Firebase Firestore
+- Font Awesome Icons
+- APIs
 
 ##Login Credentials
 Only 1 user is authorised to login
