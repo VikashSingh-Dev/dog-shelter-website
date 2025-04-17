@@ -16,7 +16,8 @@ This colour palette was chosen with the specific intent to cater solely towards 
 1. V.S. :
     -Team Lead and DevOps
     -Theme creator
-    -Home Page(HTML, CSS, JS) and Login/Signup form designer(not donation form in home page - done by T.L.)
+    -Home Page and Login/Signup form designer(not donation form in home page - done by T.L.)
+    -Navbar glow on scroll and Navbar hover animation(all navbar and footer design)
 
 2. T.L. :
     -UI Design
@@ -29,14 +30,25 @@ This colour palette was chosen with the specific intent to cater solely towards 
     -Contact Us Form javascript
 
 ##Features
-- **Home Page**: Mascot Banner, Adoption Process, About Section, Review Section, Article Section
-- **About Us**: Banner, 
-
 
 ###Pages
-
+- **Home Page**: Mascot Banner, Adoption Process, About Section, Review Section, Article Section
+- **About Us**: Banner, Description, Staff
+- **Adopt**: Banner, Filter & Search, Card Gallery, View Details and Bookmarking
+- **Contact Us**: Form
+- **Login/Signup**: Animated Form(2-in-1), Forget Password Link
 
 ###Functionality
+- Firebase Authentication for login/signup form(one user)
+- Logout button
+- Firebase Firestore for interactive review section
+- Navbar glow on scroll
+- Navbar hover Animation
+- Smooth navigation between pages
+- Articles to educate users
+- Card gallery
+- Functional filtering and searching in card gallery
+- Bookmarking and view details in card gallery
 
 ##Technologies used
 
