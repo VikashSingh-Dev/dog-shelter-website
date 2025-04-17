@@ -102,4 +102,4 @@ prevBtn.addEventListener("click", () => {
   updateActive();
 });
 
-window.addEventListener("load", loadReviews);
+// window.addEventListener("load", loadReviews);
