@@ -30,7 +30,7 @@ This colour palette was chosen with the specific intent to cater solely towards 
 
 ##Features
 - **Home Page**: Mascot Banner, Adoption Process, About Section, Review Section, Article Section
-- **About Us**: 
+- **About Us**: Banner, 
 
 
 ###Pages
