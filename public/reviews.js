@@ -41,10 +41,7 @@ reviewForm.addEventListener("submit", async (e) => {
     });
 
     reviewText.value = "";
-    setTimeout(() => {
-      loadReviews();
-    }, 500);
-    
+    loadReviews();
   }
 });
 
