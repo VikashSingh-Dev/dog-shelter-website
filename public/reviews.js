@@ -74,7 +74,6 @@ async function loadReviews() {
   }).join("");
 
   const hardcoded = document.querySelectorAll(".review-item");
-  reviewSlider.innerHTML = ''; // prevent duplication
   reviewSlider.innerHTML = newReviews + [...hardcoded].map(e => e.outerHTML).join('');
   updateActive();
 }
