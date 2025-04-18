@@ -35,7 +35,16 @@ body {
 
 h1 {
     text-align: center;
-    color: #bd7c27;
+    color: #689F38;
+    font-size: 35px;
+    font-family:Arial, Helvetica, sans-serif;
+
+}
+h2{
+    text-align: center;
+    color: #689F38;
+    font-size: 30px;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 .message{
