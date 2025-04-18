@@ -30,38 +30,42 @@ body {
     border-radius: 8px;
     flex: 1;
     width:50%;
+   
 }
 
 h1 {
     text-align: center;
     color: #bd7c27;
 }
+
 .message{
-    width: 90em;
-   
+    width:90em;
+    height: 10%;
 }
+
 
 .both{
     display: flex;
     gap: 30px;
-    align-items:center;
+    width: 100%;
     justify-content: space-between;
+    align-items: flex-start;
 }
 p {
     font-size: 1.1em;
     margin-bottom: 20px;
+    display: inline;
 }
 .btn2 {
     background-color: #689F38;
     color: white;
     border: none;
     padding: 10px 20px;
-    margin-top: 0px;
-    margin-right: 40px;
-    margin-left: 10px;
+    margin-right: 10%;
     border-radius: 5px;
     cursor: pointer;
    display: flex;
+   margin-top: 150px;
    
 }
 .btn1 {
@@ -69,10 +73,10 @@ p {
     color: white;
     border: none;
     padding: 10px 20px;
-    
+    margin-left: 10%;
     border-radius: 5px;
     cursor: pointer;
-    
+    margin-top: 150px;
 }
 
 .btn1:hover {
@@ -83,6 +87,21 @@ p {
     background-color: #FFB74D;
 }
 
+.both {
+    display: flex;
+    gap: 30px;
+  
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+
+#item-details {
+    gap: 30px;
+    justify-content: space-between;
+    
+}
+
 #item-details h3 {
     margin-bottom: 10px;
     transition: transform 1s ease-in-out;
@@ -91,11 +110,11 @@ p {
 
 #item-details img {
     width: 400px;
-    height: 300px;
-    margin-left: 90px;
-    margin-top: 80px;
+    height: 350px;
     transition: transform 1s ease-in-out;
 }
+
+
 .staff-section {
 padding: 40px;
 max-width: 1200px;
