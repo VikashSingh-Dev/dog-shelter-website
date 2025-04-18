@@ -43,6 +43,7 @@ This colour palette was chosen with the specific intent to cater solely towards 
 - Firebase Authentication for login/signup form(one user)
 - Logout button
 - Firebase Firestore for interactive review section
+- User can only bookmark if they are bob and logged in
 - User can only add reviews if they are bob and logged in
 - Navbar glow on scroll
 - Navbar hover Animation
