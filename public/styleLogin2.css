@@ -253,3 +253,67 @@ body.active {
     text-decoration-line: underline;
 }
 
+@media (max-width: 480px) {
+    body {
+      height: auto;
+      padding: 20px;
+      justify-content: flex-start;
+      background-size: cover;
+    }
+  
+    .container {
+      width: 100%;
+      min-height: auto;
+      padding: 20px 10px;
+      border-radius: 20px;
+      box-shadow: none;
+    }
+  
+    .container form {
+      padding: 0 20px;
+    }
+  
+    .toggle-container {
+      display: none;
+    }
+  
+    .log-in,
+    .sign-up {
+      width: 100%;
+      position: relative;
+    }
+  
+    .container.active .log-in,
+    .container.active .sign-up {
+      transform: none;
+    }
+  
+    .container input {
+      font-size: 14px;
+      padding: 10px;
+    }
+  
+    .container button {
+      padding: 10px 30px;
+      font-size: 14px;
+    }
+  
+    .socialmedia-icons {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .socialmedia-icons a {
+      margin: 5px;
+      width: 36px;
+      height: 36px;
+    }
+  
+    .toggle-panel {
+      display: none;
+    }
+  
+    #fpw {
+      font-size: 12px;
+    }
+  }

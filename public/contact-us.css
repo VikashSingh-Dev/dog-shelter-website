@@ -49,3 +49,61 @@ font-weight: bold;
 button:hover {
 background-color:rgb(212, 131, 10) ;
 }
+
+
+@media (max-width: 1024px) {
+  .container {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .phone-container {
+    width: 100%;
+    margin-left: 0;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  input, textarea, select {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .phone-container {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .phone-container {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  input, textarea, select {
+    width: 100%;
+    font-size: 1em;
+  }
+
+  label, p {
+    font-size: 14px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+}

@@ -216,3 +216,76 @@ text-align: justify;
     text-align: center;
     
 }
+
+@media (max-width: 600px) {
+    .container {
+      flex-direction: column;
+      width: 90%;
+      height: auto;
+      gap: 20px;
+    }
+  
+    .about-us {
+      width: 100%;
+      padding: 20px;
+    }
+  
+    .both {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .message,
+    #item-details {
+      width: 100%;
+      text-align: center;
+    }
+  
+    #item-details img {
+      width: 100%;
+      height: auto;
+    }
+  
+    .btn1,
+    .btn2 {
+      margin: 20px auto;
+      display: block;
+    }
+  
+    .staff-row {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .staff-row.reverse {
+      flex-direction: column;
+    }
+  
+    .staff-row img {
+      width: 100%;
+      height: auto;
+    }
+  
+    .counting img {
+      width: 100%;
+      height: auto;
+    }
+  
+    #counter {
+      font-size: 60px;
+      left: 40%;
+    }
+  
+    .text {
+      font-size: 24px;
+      top: 80%;
+      left: 20%;
+    }
+  
+    .text2 {
+      font-size: 30px;
+      top: 10%;
+      left: 30%;
+    }
+  }
+
