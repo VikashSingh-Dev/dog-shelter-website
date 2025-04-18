@@ -27,8 +27,8 @@ function displayCharacter(index) {
         <img src="${dog}">
     `;
 }
+window.changeCharacter = function (direction){
 
-function changeCharacter(direction) {
     currentIndex += direction;
     if (currentIndex < 0) {
         currentIndex = characterData.length - 1;  
@@ -38,6 +38,7 @@ function changeCharacter(direction) {
 
     displayCharacter(currentIndex);
 }
+
 function startSlideshow() {
     setInterval(function() {
         changeCharacter(1);  
@@ -45,3 +46,15 @@ function startSlideshow() {
 }
 
 fetchData(); 
+
+let count = 0;
+      
+function updateCount() {
+    if (count<360){
+  count = count + 5;
+  document.getElementById("counter").innerText = count;
+}
+}
+setInterval(updateCount, 350);
+
+

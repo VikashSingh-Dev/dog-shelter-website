@@ -20,6 +20,8 @@ body {
     gap:40px;            
     justify-content: center;
     line-height: 40px;
+    margin-bottom: 100px;
+ 
 }
 
 .about-us {
@@ -50,7 +52,7 @@ p {
     margin-bottom: 20px;
 }
 .btn2 {
-    background-color: #007BFF;
+    background-color: #689F38;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -63,16 +65,22 @@ p {
    
 }
 .btn1 {
-    background-color: #007BFF;
+    background-color:#689F38;
     color: white;
     border: none;
     padding: 10px 20px;
+    
     border-radius: 5px;
     cursor: pointer;
+    
 }
 
-.btn:hover {
-    background-color: #0056b3;
+.btn1:hover {
+    background-color: #FFB74D;
+}
+
+.btn2:hover{
+    background-color: #FFB74D;
 }
 
 #item-details h3 {
@@ -134,4 +142,49 @@ font-size: 25px;
 font-size: 1.1em;
 line-height: 1.6;
 text-align: justify;
+}
+
+.counting {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.counting img {
+    width: 1400px;
+    height: 350px; 
+    object-fit: cover;
+
+}
+
+#counter {
+    position: absolute;
+    top: 33%;
+    left: 47%;
+    font-size: 100px;
+    font-weight: bold;
+    color: #FFB74D;
+    
+}
+
+.text {
+    position: absolute;
+    top: 77%;
+    left: 30%;
+    font-size: 40px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    
+}
+.text2{
+    position: absolute;
+    top: 10%;
+    left: 48%;
+    font-size: 50px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    
 }
