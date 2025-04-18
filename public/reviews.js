@@ -22,7 +22,7 @@ const reviewSlider = document.getElementById("review-slider");
 onAuthStateChanged(auth, (user) => {
   if (user && user.email === "bob@pawsome.com") {
     reviewForm.style.display = "block";
-    loadReviews();
+    // loadReviews();
   } else {
     reviewForm.style.display = "none";
   }
