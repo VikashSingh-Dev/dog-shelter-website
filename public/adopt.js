@@ -58,8 +58,9 @@
               <div class="button-container">
               <button onclick="showDetails(${dog.id})">View Details</button>
               <button class="bookmark-btn" onclick="bookmarkDog('${dog.id}')">
-  <img src="bookmark.png" alt="Bookmark" class="icon-btn" /></button>
-  </div>
+              <img src="bookmark.png" alt="Bookmark" class="icon-btn" /></button>
+              </div>
+
             </article>
           `;
         }
