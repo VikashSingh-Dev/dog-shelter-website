@@ -1,5 +1,4 @@
-
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
     import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
     import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
 
@@ -16,10 +15,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebas
     const auth = getAuth(app);
     const db = getFirestore(app);
 
-    let state = [];
-    const API_KEY = 'AIzaSyATwsq8hyn3qo-t7ro41vT5ACS-2XaO1bY';
-    const subId = 'user-123';
-
+    export let state = [];
+    
   
     onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -58,8 +55,11 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebas
               <p><strong>Breed Type:</strong> ${dog.name}</p><br>
               <p><strong>Breed Group:</strong> ${dog.breed_group}</p><br>
               <p><strong>Life Span:</strong> ${dog.life_span}</p><br>
+              <div class="button-container">
               <button onclick="showDetails(${dog.id})">View Details</button>
-              <button onclick="bookmarkDog('${dog.id}')">❤️ Bookmark</button>
+              <button class="bookmark-btn" onclick="bookmarkDog('${dog.id}')">
+  <img src="bookmark.png" alt="Bookmark" class="icon-btn" /></button>
+  </div>
             </article>
           `;
         }
@@ -123,32 +123,77 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebas
       });
       document.querySelector('#bookmarks').innerHTML = html;
     }
+    window.search = function () {
+      let searchKey = document.querySelector('#searchKey').value; 
+      let results = [];
 
-    function showDetails(breedId) {
-      let breed = state.find(dog => dog.id === breedId);
-      if (breed) {
+   
+      for (let rec of state) {
+         
+          let searchText = rec.name.toUpperCase();
+searchKey = searchKey.toUpperCase();
+
+        
+          if (searchText.search(searchKey) !== -1) {
+              results.push(rec); 
+          }
+      }
+
+      displayBreeds(results); 
+  }
+
+    window.filterByGroup = function (group) {
+      let filtered = [];
+    
+      for (let rec of state) {
+        if (group === 'all' || rec.breed_group === group) {
+          filtered.push(rec);
+        }
+      }
+    
+      displayBreeds(filtered);
+    };
+    
+    window.filterByLife = function (range) {
+      let filtered = [];
+    
+      for (let rec of state) {
+        let years = rec.life_span;
+    
+        if (
+          range === 'all' ||
+          (range === 'medium' && years >= '10' && years <= '13') ||
+          (range === 'long' && years > '13')
+        ) {
+          filtered.push(rec);
+        }
+      }
+    
+      displayBreeds(filtered);
+    };
+   
+    window.showDetails = function (breedId) {
+    let breed = null;
+
+    for (let i = 0; i < state.length; i++) {
+        if (state[i].id === breedId) {
+            breed = state[i]; 
+        }
+    }
+
+    if (breed) {
         document.getElementById('breedName').textContent = 'Breed: ' + breed.name;
         document.getElementById('breedGroup').textContent = 'Group: ' + (breed.breed_group || 'Unknown');
         document.getElementById('lifeSpan').textContent = 'Life Span: ' + (breed.life_span || 'Unknown');
         document.getElementById('additionalInfo').textContent = 'Temperament: ' + (breed.temperament || 'Unknown') + ' | Origin: ' + (breed.origin || 'Unknown');
         document.getElementById('breedDetails').style.display = 'block';
-      }
     }
+}
 
-    function closeModal() {
-      document.getElementById('breedDetails').style.display = 'none';
-    }
+window.closeModal = function () {
+    document.getElementById('breedDetails').style.display = 'none';
+}
 
-    function search() {
-      let searchKey = document.querySelector('#searchKey').value.toUpperCase();
-      let results = [];
+getBreeds();
 
-      for (let dog of state) {
-        let searchText = dog.name.toUpperCase();
-        if (searchText.includes(searchKey)) {
-          results.push(dog);
-        }
-      }
 
-      displayBreeds(results);
-    }
