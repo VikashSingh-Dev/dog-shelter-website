@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+body{
+    margin-top: 80px;
+    background-image: url('paws.jpg');
+  }
+
+.container {
+background: white;
+padding: 30px;
+border-radius: 10px;
+box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+width: 60%;
+margin-left: 300px;
+text-align: center;
+}
+
+h2 {
+margin-bottom: 20px;
+}
+
+input, textarea,select {
+width: 80%;
+padding: 12px;
+margin: 10px 0;
+border: 1px solid #ddd;
+border-radius: 6px;
+font-size: 14px;
+font: 1em sans-serif;
+}
+.phone-container {
+display: flex;
+gap: 10px;
+margin-bottom: 15px;
+width: 500px;
+justify-content: center;
+margin-left: 150px;
+}
+label,p {
+display: block;
+font-size: 16px;
+color: #7d7a86;
+margin-top: 20px;;
+margin-bottom: 8px;
+text-align: center;
+font-weight: bold;
+}
+
+button:hover {
+background-color:rgb(212, 131, 10) ;
+}
