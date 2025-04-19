@@ -117,27 +117,28 @@
             </form>
         </div>
     </div>
-
-    <div class="popup" id="successPopup">
-        <span class="close-btn" onclick="closePopup()">X</span>
-        <h3>Contact Us</h3>
-    
-        <div id="formFields">
-            <input type="text" id="contactName" placeholder="Your name"><br><br>
-            <input type="email" id="contactEmail" placeholder="Your email"><br><br>
-            <textarea id="contactMessage" placeholder="Your message"></textarea><br><br>
-            <button onclick="Send()">Send</button>
-        </div>
-    
-        <div class="success-message" id="thankYou" style="display: none;">
-            🐶 Your message was submitted successfully!
-        </div>
-    </div>
-    
     
     <p class="copyright">Copyright &copy; 2025. All Rights Reserved to <h6 class="logo"><i class="fa-solid fa-paw"></i>Paw<span class="split">some</span><span class="alt">Rescues</span></h6></p>
   </footer>
 
+  <div class="popup" id="successPopup">
+    <span class="close-btn" onclick="closePopup()">X</span>
+    <h3>Contact Us</h3>
+
+    <div id="formFields">
+        <input type="text" id="name" placeholder="Your Name" required><br><br>
+          <input type="email" id="email" placeholder="Your Email"><br><br>
+          <p>Enter your phone Number below</p><br>
+          <div class="phone-container">
+           
+            <input type="text" id="areaCode" placeholder="Area Code" maxlength="3"><br><br>
+            <input type="text" id="prefix" placeholder="Prefix" maxlength="3" required><br><br>
+            <input type="text" id="lineNumber" placeholder="Line Number" maxlength="4" required><br><br>
+        <button onclick="Send()">Send</button>
+    </div>
+
+    <div class="success-message" id="thankYou" style="display: none;">🐶 Your message was submitted successfully!</div>
+</div>
 
     <script src="startup.js"></script>
     <script src="logout.js" type="module"></script>
