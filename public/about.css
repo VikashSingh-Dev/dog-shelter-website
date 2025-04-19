@@ -31,14 +31,14 @@ body {
    
 }
 
-h1 {
+#P1{
     text-align: center;
     color: #689F38;
     font-size: 35px;
     font-family:Arial, Helvetica, sans-serif;
 
 }
-h2{
+#P2{
     text-align: center;
     color: #689F38;
     font-size: 30px;
@@ -50,10 +50,6 @@ h2{
     height: 10%;
 }
 
-.message{
-max-width: 100%;
-width: 100%;
-}
 
 .both{
     display: flex;
@@ -62,6 +58,7 @@ width: 100%;
     justify-content: space-between;
     align-items: flex-start;
 }
+ 
 p {
     font-size: 1.1em;
     margin-bottom: 20px;
@@ -98,15 +95,6 @@ p {
     background-color: #FFB74D;
 }
 
-.both {
-    display: flex;
-    gap: 30px;
-  
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-
 #item-details {
     gap: 30px;
     justify-content: space-between;
@@ -124,7 +112,6 @@ p {
     height: 350px;
     transition: transform 1s ease-in-out;
 }
-
 
 .staff-section {
 padding: 40px;
@@ -162,7 +149,7 @@ flex: 1;
 }
 
 .staff-info h3 {
-color: #208617;
+color: #689F38;
 margin-bottom: 10px;
 font-family: Arial, Helvetica, sans-serif;
 font-size: 25px;
@@ -218,7 +205,6 @@ text-align: justify;
     text-align: center;
     
 }
-
 
 @media (max-width: 600px) {
     .container {
@@ -291,4 +277,3 @@ text-align: justify;
       left: 30%;
     }
   }
-
