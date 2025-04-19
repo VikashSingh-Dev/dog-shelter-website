@@ -28,6 +28,7 @@ border-radius: 6px;
 font-size: 14px;
 font: 1em sans-serif;
 }
+
 .phone-container {
 display: flex;
 gap: 10px;
@@ -36,7 +37,8 @@ width: 500px;
 justify-content: center;
 margin-left: 150px;
 }
-label,p {
+
+label {
 display: block;
 font-size: 16px;
 color: #7d7a86;
@@ -48,10 +50,6 @@ font-weight: bold;
 
 button:hover {
 background-color:rgb(212, 131, 10) ;
-}
-
-footer p{
-  color: white;
 }
 
 @media (max-width: 1024px) {
@@ -110,3 +108,4 @@ footer p{
     font-size: 22px;
   }
 }
+  
