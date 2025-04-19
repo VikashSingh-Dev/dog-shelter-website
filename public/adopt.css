@@ -176,11 +176,12 @@ border-radius: 70%;
 padding: 4px;
 box-sizing: border-box; 
 cursor: pointer;
-align-items: center;
+align-items: right;
 justify-content: center;
 transition: background-color 0.3s ease;
 width: 35px;                 
 height: 35px;
+margin-left: 30px;
 }
 
 .bookmark-btn:hover {
