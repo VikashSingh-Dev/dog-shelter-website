@@ -1,6 +1,6 @@
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
     import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
-    import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
+    import { getFirestore, collection, addDoc, getDocs} from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
 
     const firebaseConfig = {
       apiKey: "AIzaSyATwsq8hyn3qo-t7ro41vT5ACS-2XaO1bY",
@@ -56,7 +56,7 @@
               <p><strong>Breed Group:</strong> ${dog.breed_group}</p><br>
               <p><strong>Life Span:</strong> ${dog.life_span}</p><br>
               <div class="button-container">
-              <button onclick="showDetails(${dog.id})">View Details</button>
+              <button class="view-details-btn" onclick="showDetails(${dog.id})">View Details</button>
               <button class="bookmark-btn" onclick="bookmarkDog('${dog.id}')">
               <img src="bookmark.png" alt="Bookmark" class="icon-btn" /></button>
               </div>
@@ -172,29 +172,27 @@ searchKey = searchKey.toUpperCase();
     
       displayBreeds(filtered);
     };
-   
     window.showDetails = function (breedId) {
-    let breed = null;
-
-    for (let i = 0; i < state.length; i++) {
-        if (state[i].id === breedId) {
-            breed = state[i]; 
-        }
-    }
-
-    if (breed) {
-        document.getElementById('breedName').textContent = 'Breed: ' + breed.name;
-        document.getElementById('breedGroup').textContent = 'Group: ' + (breed.breed_group || 'Unknown');
-        document.getElementById('lifeSpan').textContent = 'Life Span: ' + (breed.life_span || 'Unknown');
-        document.getElementById('additionalInfo').textContent = 'Temperament: ' + (breed.temperament || 'Unknown') + ' | Origin: ' + (breed.origin || 'Unknown');
-        document.getElementById('breedDetails').style.display = 'block';
-    }
-}
-
-window.closeModal = function () {
-    document.getElementById('breedDetails').style.display = 'none';
-}
-
-getBreeds();
-
+      let breed = null;
+  
+      for (let i = 0; i < state.length; i++) {
+          if (state[i].id === breedId) {
+              breed = state[i]; 
+          }
+      }
+  
+      if (breed) {
+          document.getElementById('breedName').textContent = 'Breed: ' + breed.name;
+          document.getElementById('breedGroup').textContent = 'Group: ' + (breed.breed_group || 'Unknown');
+          document.getElementById('lifeSpan').textContent = 'Life Span: ' + (breed.life_span || 'Unknown');
+          document.getElementById('additionalInfo').textContent = 'Temperament: ' + (breed.temperament || 'Unknown') + ' | Origin: ' + (breed.origin || 'Unknown');
+          document.getElementById('breedDetails').style.display = 'block';
+      }
+  }
+  
+  window.closeModal = function () {
+      document.getElementById('breedDetails').style.display = 'none';
+  }
+  
+  getBreeds();
 
