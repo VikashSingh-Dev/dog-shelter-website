@@ -19,14 +19,20 @@ h2 {
 margin-bottom: 20px;
 }
 
-input, textarea,select {
-width: 80%;
-padding: 12px;
-margin: 10px 0;
-border: 1px solid #ddd;
-border-radius: 6px;
-font-size: 14px;
-font: 1em sans-serif;
+#name,
+#email,
+#areaCode,
+#prefix,
+#lineNumber,
+#subject,
+#message {
+  width: 80%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  font: 1em sans-serif;
 }
 .phone-container {
 display: flex;
@@ -36,7 +42,8 @@ width: 500px;
 justify-content: center;
 margin-left: 150px;
 }
-label,p {
+
+label {
 display: block;
 font-size: 16px;
 color: #7d7a86;
@@ -48,10 +55,6 @@ font-weight: bold;
 
 button:hover {
 background-color:rgb(212, 131, 10) ;
-}
-
-footer p{
-  color: white;
 }
 
 @media (max-width: 1024px) {
@@ -110,3 +113,4 @@ footer p{
     font-size: 22px;
   }
 }
+  
