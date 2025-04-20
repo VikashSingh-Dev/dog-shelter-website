@@ -15,7 +15,7 @@ margin-left: 300px;
 text-align: center;
 }
 
-h2 {
+#Heading1 {
 margin-bottom: 20px;
 }
 
@@ -43,7 +43,7 @@ justify-content: center;
 margin-left: 150px;
 }
 
-label {
+.labelling {
 display: block;
 font-size: 16px;
 color: #7d7a86;
