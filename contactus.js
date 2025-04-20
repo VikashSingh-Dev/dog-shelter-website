@@ -3,15 +3,15 @@ const thankYouMessage = document.getElementById("thankYou");
 const formFields = document.getElementById("formFields");
 
 function showPopup() {
-    popup.style.display = "flex";
+    popup.style.display = "block";
 }
 
 function submitContactForm() {
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const areaCode = document.getElementById("areaCode").value.trim();
-    const prefix = document.getElementById("prefix").value.trim();
-    const lineNumber = document.getElementById("lineNumber").value.trim();
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const areaCode = document.getElementById("areaCode").value;
+    const prefix = document.getElementById("prefix").value;
+    const lineNumber = document.getElementById("lineNumber").value;
 
     if (!name || !email || !prefix || !lineNumber) {
         alert("Please fill in all required fields!");
@@ -39,7 +39,3 @@ function closePopup() {
     thankYouMessage.style.display = "none";
     formFields.style.display = "block";
 }
-
-
-
-
