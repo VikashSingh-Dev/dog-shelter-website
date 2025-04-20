@@ -1,4 +1,3 @@
-
 const popup = document.getElementById("successPopup");
 const thankYouMessage = document.getElementById("thankYou");
 const formFields = document.getElementById("formFields");
