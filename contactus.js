@@ -1,11 +1,3 @@
-// Sticky navbar on scroll
-window.addEventListener("scroll", function () {
-  var nav = document.querySelector("nav");
-  if (nav) {
-      nav.classList.toggle("sticky", window.scrollY > 0);
-  }
-});
-
 // Show contact popup manually (if needed)
 function showPopup() {
   const popup = document.getElementById("successPopup");
