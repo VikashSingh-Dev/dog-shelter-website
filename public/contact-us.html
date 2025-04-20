@@ -29,10 +29,10 @@
         <!-- <a href="Adopt.html#adopt">Adopt</a>
         <a href="Contact.html#contact">Contact</a> -->
     </nav>
-  <div class="container">
-    <div class="Heading1">
+  
+
+    <div class="container">
         <h2>Contact Us</h2>
-    </div>
         <form id="contactForm">
           <input type="text" id="name" placeholder="Your Name" required />
           <input type="email" id="email" placeholder="Your Email" required />
@@ -43,11 +43,8 @@
             <input type="text" id="prefix" placeholder="Prefix" maxlength="3" required />
             <input type="text" id="lineNumber" placeholder="Line Number" maxlength="4" required />
           </div>
-       <div class="labelling">
-          <label for="subject" >Select A Topic</label>
-          </div>
-         <select id="subject" required>
-
+          <label for="subject">Select A Topic</label>
+      <select id="subject" required>
         <option value="" disabled selected>Select a Topic</option>
         <option value="adoption">Adoption Inquiry</option>
         <option value="volunteer">Volunteering Services</option>
@@ -58,6 +55,7 @@
           <textarea id="message" placeholder="Your Message" required></textarea><br>
           <button type="submit">Send</button>
         </form>
+
       </div>
     
   <footer id="footer">
@@ -125,7 +123,6 @@
 
   <div class="popup" id="successPopup">
     <span class="close-btn" onclick="closePopup()">X</span>
-    <button onclick="showPopup()">Contact Us</button>
     <h3>Contact Us</h3>
 
     <div id="formFields">
