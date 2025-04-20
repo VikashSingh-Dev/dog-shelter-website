@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dog Shelter Contact</title>
+</head>
+<body>
+
+  <div class="popup" id="successPopup">
+    <span class="close-btn" onclick="closePopup()">X</span>
+    <h3>Contact Us</h3>
+
+    <div id="formFields">
+      <input type="text" id="name" placeholder="Your Name" required><br><br>
+      <input type="email" id="email" placeholder="Your Email" required><br><br>
+      <p>Enter your phone number:</p><br>
+      <div class="phone-container">
+        <input type="text" id="areaCode" placeholder="Area Code" maxlength="3"><br><br>
+        <input type="text" id="prefix" placeholder="Prefix" maxlength="3"><br><br>
+        <input type="text" id="lineNumber" placeholder="Line Number" maxlength="4"><br><br>
+        <button onclick="submitContactForm()">Send</button>
+      </div>
+    </div>
+
+    <div class="success-message" id="thankYou" style="display: none;">
+      🐶 Your message was submitted successfully!
+    </div>
+  </div>
+
+  <script src="contactus.js" type="module"></script>
+
+</body>
+</html>
+
