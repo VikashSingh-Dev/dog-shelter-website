@@ -65,6 +65,20 @@ font-weight: bold;
 button:hover {
 background-color:rgb(212, 131, 10) ;
 }
+.popup {
+  display: none;  
+  position: fixed;
+  top: 50%;  
+  left: 50%; 
+  background-color: white;  
+  padding: 20px;
+  border: 1px solid #ccc; 
+  border-radius: 5px;
+  width: 300px;
+  text-align: center;
+  box-shadow: none; 
+  visibility: hidden;
+}
 
 @media (max-width: 1024px) {
   .container {
